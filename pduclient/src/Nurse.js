@@ -31,7 +31,7 @@ class Nurse extends Component{
 
             }
 
-            
+
 
 
         }).catch(function (reason) {
