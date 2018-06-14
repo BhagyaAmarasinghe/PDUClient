@@ -6,6 +6,9 @@ import Doctor from './Doctor.js'
 import Material from './Material.js'
 import Nurse from './Nurse.js'
 import Attendant from './Attendant.js'
+import Login from './Login';
+import Register from './AddUsers';
+import Home from './Home';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 
@@ -37,7 +40,13 @@ class App extends Component {
           <button> <Link to='/Attendant'>Attendants</Link></button>&nbsp;&nbsp;
   <Route exact path='/Attendant' render={function(props){  return <Attendant />}}></Route>
 
+               <h2 className={'login'}><Link to={'/'}>Login</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <h2 className={'login'}><Link to={'/addUser'}>Register</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <h1> <Link to={'/home'}>Home</Link></h1>
 
+               <Route exact path='/addUser' render={function(props){  return <Register />}}> </Route>
+               <Route exact path='/' render={function(props){  return <Login />}}> </Route>
+               <Route exact path='/home' render={function (props) {return <Home/>}}/>
 
 
 
