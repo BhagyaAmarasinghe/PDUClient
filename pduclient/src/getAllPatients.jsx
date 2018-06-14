@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import PropTypes from 'prop-types';
 
-var Base=require('./Static.common');
+var Base=require('./Statics.Common');
 
 export default class getAllPatients extends Component {
     constructor(props) {

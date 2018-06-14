@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-var Base=require ('./Static.common');
+var Base=require ('./Statics.Common');
 
 
 export default class AddPatients extends Component{

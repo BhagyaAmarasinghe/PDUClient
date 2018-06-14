@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import axios from 'axios';
-var Base=require ('./Static.common');
+var Base=require ('./Statics.Common');
 
 export default class AddPatients extends Component{
 
