@@ -1,23 +1,20 @@
 
 import React, {Component} from 'react';
+import  ReactDOM from 'react-dom';
 import axios from 'axios';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Home from './Home';
+
+import MainFrame from './MainFrame';
+
 var Base =require('./Statics.Common');
 
 
+
 export default class Login extends Component {
-
-
-
     userLogin(event) {
         event.preventDefault();
-        axios.get(Base.API + '/UserDetails/' + this.refs.UserName.value,{UserName:this.refs.UserName.value,password:this.refs.password.value}).then(function (result) {
+        axios.get(Base.API + '/UserDetails/loginuser/' + {UserName: this.refs.UserName.value}).then(function (result) {
             if (result.status === 200) {
-
-                alert('Done');
-                
-
+                ReactDOM.render(<MainFrame/>,document.getElementById('root'));
             }
         }).catch(function (err) {
             alert('Error login ' + err);
@@ -29,7 +26,6 @@ export default class Login extends Component {
         return (
 
             <div className={'loginusers'}>
-
                 <header className={'loginusers-header'}>
 
                 </header>
