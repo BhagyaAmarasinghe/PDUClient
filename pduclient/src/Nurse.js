@@ -24,17 +24,14 @@ class Nurse extends Component{
     addNurse(event){
         event.preventDefault();
 
-        axios.post(Base.API+'/Nurse',{mat_id:this.refs.mat_id.value,mat_name:this.refs.mat_name.value,mat_quantity:this.refs.mat_quantity.value,mat_price:this.refs.mat_price.value}).then(function (result) {
+        axios.post(Base.API+'/Nurse',{nur_id:this.refs.nur_id.value,nur_name:this.refs.nur_name.value,nur_nic:this.refs.nur_nic.value,nur_age:this.refs.nur_age.value,nur_address:this.refs.nur_address.value,nur_ward:this.refs.nur_ward.value,nur_priority_status:this.refs.nur_priority_status.value}).then(function (result) {
             if(result.status == 200){
                 console.log('successfully added');
                 alert("successfully added");
 
             }
 
-            /*this.refs.mat_id.value ='';
-            this.refs.mat_name.value ='';
-            this.refs.mat_quantity.value ='';
-            this.refs.mat_price.value ='';*/
+            
 
 
         }).catch(function (reason) {
