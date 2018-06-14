@@ -92,6 +92,7 @@ class Nurse extends Component{
         var nurse = this.state.nurses
         return(
             <div class = 'nurses'>
+            <h1 className="Form-title">Add Nurse</h1>
             <form>
             <lable>Nurse id :</lable><br/>
         <input type='text' ref='nur_id'></input><br/><br/>
