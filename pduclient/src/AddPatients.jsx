@@ -1,29 +1,49 @@
 import React,{Component} from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 import axios from 'axios';
+require('react-datepicker/dist/react-datepicker.css');
 var Base=require ('./Statics.Common');
 
 export default class AddPatients extends Component{
 
+    constructor (props) {
+        super(props)
+        this.state = {
+            startDate: moment()
+        };
+        this.handleChange = this.handleChange.bind(this);
+
+    }
+
+    handleChange(date) {
+        const valuedate=date.format();
+        this.setState({
+            startDate: valuedate
+        });
+    }
+
     addPatients(event){
-
-
         event.preventDefault();
+
         axios.post(Base.API+ '/PatientDetails/',{PID:this.refs.PID.value,
-                                                Pname:this.refs.Pname.value,
-                                                PtAge:this.refs.PtAge.value,
-                                                Condition:this.refs.Condition.value,
-                                                Address:this.refs.Address.value,
-                                                Guardian:this.refs.Guardian.value,
-                                                NIC:this.refs.NIC.value,
-                                                Priority:this.refs.Priority.value,
-                                                MedicalHistory:this.refs.MedicalHistory.value,
-                                                PatientStatus:this.refs.PatientStatus.value,
-                                                Treatments:this.refs.Treatments.value,
-                                                Tests:this.refs.Tests.value,
-                                                Drugs:this.refs.Drugs.value}).then(function (result) {
-                                                                 if(result.status===200){
-                                                                           alert('Patient Registered');
-                                                                 }
+            Pname:this.refs.Pname.value,
+            PtAge:this.refs.PtAge.value,
+            Condition:this.refs.Condition.value,
+            Address:this.refs.Address.value,
+            Guardian:this.refs.Guardian.value,
+            NIC:this.refs.NIC.value,
+            Priority:this.refs.Priority.value,
+            MedicalHistory:this.refs.MedicalHistory.value,
+            PatientStatus:this.refs.PatientStatus.value,
+            Treatments:this.refs.Treatments.value,
+            Tests:this.refs.Tests.value,
+            Drugs:this.refs.Drugs.value,
+            Date:this.state.startDate
+            }).then(function (result) {
+            if(result.status===200){
+                alert('Patient Registered');
+            }
         }).catch(function (err) {
             alert('Registration Error '+err);
         })
@@ -93,6 +113,18 @@ export default class AddPatients extends Component{
                         <tr>
                             <td><label>Drugs: </label></td>
                             <td><input type={'text'} ref={'Drugs'}/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Date: </label></td>
+                            <td>
+                                <DatePicker id={'Data'}
+                                            selected={this.state.startDate}
+                                            onChange={this.handleChange}
+                                            minDate={moment()}
+                                            maxDate={moment().add(5, "months")}
+                                            showDisabledMonthNavigation />
+
+                            </td>
                         </tr>
                     </table>
 

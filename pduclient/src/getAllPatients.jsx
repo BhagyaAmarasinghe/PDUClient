@@ -60,6 +60,7 @@ export default class getAllPatients extends Component {
                     <th>Treatments</th>
                     <th>Tests</th>
                     <th>Drugs</th>
+                    <th>Date</th>
 
 
                 </tr>
@@ -83,6 +84,7 @@ export default class getAllPatients extends Component {
                             <td>{PatientLists.Treatments}</td>
                             <td>{PatientLists.Tests}</td>
                             <td>{PatientLists.Drugs}</td>
+                            <td>{PatientLists.Date}</td>
 
                         </tr>)
                     })
