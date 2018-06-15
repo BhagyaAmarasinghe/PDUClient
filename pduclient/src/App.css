@@ -25,6 +25,9 @@
 h2.login{
   display: inline-block;
 }
+.set{
+  display: inline-block;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
