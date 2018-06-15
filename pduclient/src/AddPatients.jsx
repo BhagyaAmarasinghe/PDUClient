@@ -39,6 +39,7 @@ export default class AddPatients extends Component{
             Treatments:this.refs.Treatments.value,
             Tests:this.refs.Tests.value,
             Drugs:this.refs.Drugs.value,
+            Doctor:this.refs.Doctor.value,
             Date:this.state.startDate
             }).then(function (result) {
             if(result.status===200){
@@ -80,7 +81,7 @@ export default class AddPatients extends Component{
                         </tr>
                         <tr>
                             <td><label>Address: </label></td>
-                            <td><input type={'text'} ref={'Address'}/></td>
+                            <td><input type={'text'} ref={'Address'} value={'N/a'}/></td>
                         </tr>
                         <tr>
                             <td><label>Guardian: </label></td>
@@ -88,7 +89,7 @@ export default class AddPatients extends Component{
                         </tr>
                         <tr>
                             <td><label>NIC: </label></td>
-                            <td><input type={'text'} ref={'NIC'}/></td>
+                            <td><input type={'text'} ref={'NIC'} value={'N/a'}/></td>
                         </tr>
                         <tr>
                             <td><label>Priority: </label></td>
@@ -96,7 +97,7 @@ export default class AddPatients extends Component{
                         </tr>
                         <tr>
                             <td><label>Medical History: </label></td>
-                            <td><input type={'text'} ref={'MedicalHistory'}/></td>
+                            <td><input type={'text'} ref={'MedicalHistory'} value={'N/a'}/></td>
                         </tr>
                         <tr>
                             <td><label>Patient Status: </label></td>
@@ -104,15 +105,19 @@ export default class AddPatients extends Component{
                         </tr>
                         <tr>
                             <td><label>Treatments: </label></td>
-                            <td><input type={'text'} ref={'Treatments'}/></td>
+                            <td><input type={'text'} ref={'Treatments'} value={'N/a'}/></td>
                         </tr>
                         <tr>
                             <td><label>Tests: </label></td>
-                            <td><input type={'text'} ref={'Tests'}/></td>
+                            <td><input type={'text'} ref={'Tests'} value={'N/a'}/></td>
                         </tr>
                         <tr>
                             <td><label>Drugs: </label></td>
-                            <td><input type={'text'} ref={'Drugs'}/></td>
+                            <td><input type={'text'} ref={'Drugs'} value={'N/a'}/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Doctor: </label></td>
+                            <td><input type={'text'} ref={'Doctor'} /></td>
                         </tr>
                         <tr>
                             <td><label>Date: </label></td>

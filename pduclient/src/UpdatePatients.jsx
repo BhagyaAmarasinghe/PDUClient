@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
+import './App.css'
 import PropTypes from 'prop-types';
 import axios from 'axios';
 var Base=require ('./Statics.Common');
+
 
 
 export default class AddPatients extends Component{
@@ -25,25 +27,27 @@ static get propTypes() {
 
    upPatients(event){
         event.preventDefault();
-        axios.put(Base.API+ '/PatientDetails/'+this.refs.PID.value,
-            { PID:this.refs.PID.value,Pname:this.refs.Pname.value,
-            PtAge:this.refs.PtAge.value,
-            Condition:this.refs.Condition.value,
-            Address:this.refs.Address.value,
-            Guardian:this.refs.Guardian.value,
-            NIC:this.refs.NIC.value,
-            Priority:this.refs.Priority.value,
-            MedicalHistory:this.refs.MedicalHistory.value,
-            PatientStatus:this.refs.PatientStatus.value,
-            Treatments:this.refs.Treatments.value,
-            Tests:this.refs.Tests.value,
-            Drugs:this.refs.Drugs.value,
-            Date:this.refs.Date.value}).then(function (result) {
-            if(result.status===200){
-                alert('Patient Registered');
-            }
+
+       axios.put(Base.API+ '/PatientDetails/'+document.getElementById("PID").value,
+           { PID:document.getElementById("PID").value,Pname:document.getElementById("Pname").value,
+               PtAge:document.getElementById("PtAge").value,
+               Condition:document.getElementById("Condition").value,
+               Address:document.getElementById("Address").value,
+               Guardian:document.getElementById("Pname").value,
+               NIC:document.getElementById("NIC").value,
+               Priority:document.getElementById("Priority").value,
+               MedicalHistory:document.getElementById("MedicalHistory").value,
+               PatientStatus:document.getElementById("PatientStatus").value,
+               Treatments:document.getElementById("Treatments").value,
+               Tests:document.getElementById("Test").value,
+               Drugs:document.getElementById("Drugs").value,
+               Doctor:document.getElementById("Doctor").value,
+               Date:document.getElementById("Date").value}).then(function (result) {
+           if(result.status===200){
+
+           }
         }).catch(function (err) {
-            alert('Registration Error '+err);
+            alert('Update Error '+err);
         })
     }
 
@@ -65,12 +69,6 @@ static get propTypes() {
     })
     }
 
-    change(event){
-      event.preventDefault();
-      document.getElementById("Drugs").value=this.refs.newDrugs.value;
-      document.getElementById("Test").value=this.refs.newTests.value;
-      document.getElementById("Treatments").value=this.refs.newTreatments.value;
-    }
 
     render(){
 
@@ -82,7 +80,7 @@ static get propTypes() {
             </form>
 
             <br/><br/>
-        <form onSubmit={this.upPatients.bind(this)}>
+
             <table className="patientTable">
                 <tbody>
                 {
@@ -92,60 +90,76 @@ static get propTypes() {
 
                             <tr>
                                <td> <label>PID</label></td>
-                                <td><input type={'text'} value={PatientLists.PID} ref={'PID'} /></td>
+                                <td><input type={'text'} value={PatientLists.PID} id={'PID'} /></td>
                             </tr>
                             <tr>
                                 <td><label>Name</label></td>
-                                <td> <input type={'text'} value={PatientLists.Pname} ref={'Pname'}/></td>
+                                <td> <input type={'text'} value={PatientLists.Pname} id={'Pname'}/></td>
                             </tr>
                                 <tr>
                                     <td><label>Age</label></td>
-                                    <td><input type={'text'} value={PatientLists.PtAge} ref={'PtAge'}/></td>
+                                    <td><input type={'text'} value={PatientLists.PtAge} id={'PtAge'}/></td>
                                 </tr>
 
                            <tr>
                                <td><label>NIC</label></td>
-                              <td> <input type={'text'} value={PatientLists.NIC} ref={'NIC'}/></td>
+                              <td> <input type={'text'} value={PatientLists.NIC} id={'NIC'} ref={'NIC'}/></td>
+                               <td className={'set'}><input type={'text'} id={'newNIC'} ref={'newNIC'}/></td>
+                               <button onClick={function(){  document.getElementById("NIC").value= document.getElementById("newNIC").value}}>Add</button>
                            </tr>
                             <tr>
                                 <td><label>Guardian</label></td>
-                                <td><input type={'text'} value={PatientLists.Guardian} ref={'Guardian'}/></td>
+                                <td><input type={'text'} value={PatientLists.Guardian} id={'Guardian'}/></td>
                             </tr>
                             <tr>
                                <td> <label>Address</label></td>
-                               <td> <input type={'text'} value={PatientLists.Address} ref={'Address'}/></td>
+                               <td> <input type={'text'} value={PatientLists.Address} id={'Address'} ref={'Address'}/></td>
+                                <td className={'set'}><input type={'text'} id={'newAddress'} ref={'newAddress'}/></td>
+                                <button onClick={function(){  document.getElementById("Address").value= document.getElementById("newAddress").value}}>Add</button>
                             </tr>
                            <tr>
                                <td><label>Condition</label></td>
-                              <td> <input type={'text'} value={PatientLists.Condition} ref={'Condition'}/></td>
+                              <td> <input type={'text'} value={PatientLists.Condition} id={'Condition'}/></td>
                            </tr>
                             <tr>
                                <td> <label>Priority</label></td>
-                               <td> <input type={'text'} value={PatientLists.Priority} ref={'Priority'}/></td>
+                               <td> <input type={'text'} value={PatientLists.Priority} id={'Priority'}/></td>
                             </tr>
                             <tr>
                               <td>  <label>Medical History</label></td>
-                                <td><input type={'text'} value={PatientLists.MedicalHistory} ref={'MedicalHistory'}/></td>
+                                <td><input type={'text'} value={PatientLists.MedicalHistory} id={'MedicalHistory'} ref={'MedicalHistory'}/></td>
+                                <td className={'set'}><input type={'text'} id={'newMedicalHistory'} ref={'newMedicalHistory'}/></td>
+                                <button onClick={function(){  document.getElementById("MedicalHistory").value= document.getElementById("newMedicalHistory").value}}>Add</button>
                             </tr>
                             <tr>
                                <td> <label>Patient Status</label></td>
-                              <td>  <input type={'text'} value={PatientLists.PatientStatus} ref={'PatientStatus'}/></td>
+                              <td>  <input type={'text'} value={PatientLists.PatientStatus} id={'PatientStatus'}/></td>
                             </tr>
                            <tr>
                               <td> <label>Treatments</label></td>
                               <td> <input type={'text'} value={PatientLists.Treatments} id={'Treatments'} ref={'Treatments'}/></td>
+                               <td className={'set'}><input type={'text'} id={'newTreatments'} ref={'newTreatments'}/></td>
+                               <button onClick={function(){  document.getElementById("Treatments").value= document.getElementById("newTreatments").value}}>Add</button>
                            </tr>
                             <tr>
                                <td> <label>Tests</label></td>
-                               <td> <input type={'text'} value={PatientLists.Tests} id={'Test'} ref={'Tests'}/></td>
+                               <td> <input type={'text'} value={PatientLists.Tests} id={'Test'} ref={'Tests'} className={'set'}/></td>
+                                <td className={'set'}><input type={'text'} id={'newtests'} ref={'newTests'}/></td>
+                                <button onClick={function(){  document.getElementById("Test").value= document.getElementById("newtests").value}}>Add</button>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td><label>Drugs</label></td>
-                                <td><input type={'text'} value={PatientLists.Drugs}id={'Drugs'} ref={'Drugs'}/></td>
+                                <td><input type={'text'} value={PatientLists.Drugs}id={'Drugs'} ref={'Drugs'} className={'set'}/></td>
+                                <td className={'set'}><input type={'text'} id={'newdrugs'} ref={'newDrugs'}/></td>
+                                <button onClick={function(){  document.getElementById("Drugs").value= document.getElementById("newdrugs").value}} >Add</button>
                             </tr>
                                 <tr>
+                                    <td> <label>Doctor</label></td>
+                                    <td>  <input type={'text'} value={PatientLists.Doctor} id={'Doctor'}/></td>
+                                </tr>
+                                <tr>
                                     <td><label>Date</label></td>
-                                    <td><input type={'text'} value={PatientLists.Date}id={'Date'} ref={'Date'}/></td>
+                                    <td><input type={'text'} value={PatientLists.Date}id={'Date'} id={'Date'}/></td>
                                 </tr>
 
                             </table>
@@ -156,14 +170,17 @@ static get propTypes() {
 
                 </tbody>
             </table>
-            <button type={'submit'}>Submit</button>
-        </form>
+            <form onSubmit={this.upPatients.bind(this)}>
+                <button type={'submit'}>Submit</button>
+            </form>
 
-            <form onSubmit={this.change.bind(this)}>
+
+
+            {/*<form onSubmit={this.change.bind(this)}>
             <table>
-                <tr>
-                    <td><label>New Drugs</label></td>
-                    <td><input type={'text'} ref={'newDrugs'}/></td>
+                <tr  >
+                    <td className={'drugset'}><input type={'text'} ref={'newDrugs'}/></td>
+                    <button>Add</button>
                 </tr>
 
                 <tr>
@@ -179,7 +196,7 @@ static get propTypes() {
 
             </table>
                 <button type={'submit'}>Update fields</button>
-            </form>
+            </form>*/}
         </div>
 
     }

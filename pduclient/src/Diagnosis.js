@@ -24,7 +24,7 @@ class Diagnostics extends Component{
         event.preventDefault();
         debugger
         axios.post(Base.API+'/Diagnosis',{diag_id:this.refs.diag_id.value,p_id:this.refs.p_id.value,d_id:this.refs.d_id.value,diagnostic:this.refs.diagnosis.value,treatment:this.refs.treatment.value}).then(function (result) {
-            if(result.status == 200){
+            if(result.status === 200){
                 debugger
                 console.log('successfully added');
                 alert("successfully added");
