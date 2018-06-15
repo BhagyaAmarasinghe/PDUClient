@@ -121,7 +121,7 @@ export default class AddPatients extends Component{
                                             selected={this.state.startDate}
                                             onChange={this.handleChange}
                                             minDate={moment()}
-                                            maxDate={moment().add(5, "months")}
+                                            maxDate={moment().add(0, "days")}
                                             showDisabledMonthNavigation />
 
                             </td>
