@@ -18,7 +18,7 @@ export default class ResourseContainer extends Component{
             <div className="App">
 
 
-                {<Router>
+                <Router>
                     <div>
                         <div>
                             <div>
@@ -44,27 +44,17 @@ export default class ResourseContainer extends Component{
 
 
                         <Route exact path='/addMachine' render={function(props){  return <Form />}}></Route>
-
-
                         <Route exact path='/assignDoctor' render={function(props){  return <Doctor />}}></Route>
-
-
                         <Route exact path='/Materials' render={function(props){  return <Material />}}></Route>
-
-
                         <Route exact path='/Nurse' render={function(props){  return <Nurse />}}></Route>
-
-
                         <Route exact path='/Attendant' render={function(props){  return <Attendant />}}></Route>
-
-
                         <Route exact path='/Diagnosis' render={function(props){  return <Diagnosis />}}></Route>
 
 
 
                     </div>
 
-                </Router>}
+                </Router>
             </div>
         );
     }
