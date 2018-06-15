@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import  ReactDOM from 'react-dom';
 import axios from 'axios';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import MainFrame from './MainFrame';
 
