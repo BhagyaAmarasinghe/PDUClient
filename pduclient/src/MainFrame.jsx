@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './PatientContainer.css';
 import PatientContainer from "./PatientContainer";
@@ -11,10 +12,14 @@ import EmergencyContainer from './EmergencyContainer';
 
 
 
+
 export default class mainFrame extends Component {
 
 
     render() {
+        const style = {
+            marginTop: "20px"
+        };
         return (
             <div className="App">
                 <header className="App-header">
