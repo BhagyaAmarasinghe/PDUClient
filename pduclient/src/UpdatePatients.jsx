@@ -37,7 +37,8 @@ static get propTypes() {
             PatientStatus:this.refs.PatientStatus.value,
             Treatments:this.refs.Treatments.value,
             Tests:this.refs.Tests.value,
-            Drugs:this.refs.Drugs.value}).then(function (result) {
+            Drugs:this.refs.Drugs.value,
+            Date:this.refs.Date.value}).then(function (result) {
             if(result.status===200){
                 alert('Patient Registered');
             }
@@ -142,6 +143,10 @@ static get propTypes() {
                                 <td><label>Drugs</label></td>
                                 <td><input type={'text'} value={PatientLists.Drugs}id={'Drugs'} ref={'Drugs'}/></td>
                             </tr>
+                                <tr>
+                                    <td><label>Date</label></td>
+                                    <td><input type={'text'} value={PatientLists.Date}id={'Date'} ref={'Date'}/></td>
+                                </tr>
 
                             </table>
 

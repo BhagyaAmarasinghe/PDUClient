@@ -8,7 +8,7 @@ export default class DeletePatient extends Component{
 
 
         event.preventDefault();
-        axios.delete(Base.API+ '/PatientDetails/'+{PID:this.refs.PID.value}).then(function (result) {
+        axios.delete(Base.API+ '/PatientDetails/'+this.refs.PID.value).then(function (result) {
 
             if(result.status===200){
                 alert('Patient Deleted');

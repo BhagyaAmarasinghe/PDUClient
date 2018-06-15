@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Login from './Login';
+
 import AddPatients from './AddPatients';
 import GetAllPatients from './getAllPatients';
 import DeletePatients from './DeletePatient';
 import UpdatePatients from './UpdatePatients'
-import './Home.css';
+import './PatientContainer.css';
 
 
-export default class Home extends Component {
+
+export default class PatientContainer extends Component {
+
+
     render() {
         return (
             <div className="Home">
-                <header className="Home-header">
 
-                    <h1 className="Home-title">Welcome To HIS</h1>
-                </header>
-                <p className="Home-intro"></p>
 
                 <Router>
-                    <div>
+                    <div align="center">
 
-                        <h2 className={'addPatients'}><Link to={'/addPatients'}>Add Patients</Link></h2>
-                        <h2 className={'getallPatients'}><Link to={'/allPatients'}>Get All Patients</Link></h2>
-                        <h2 className={'deletePatients'}><Link to={'/deletePatients'}>Delete Patients</Link></h2>
-                        <h2 className={'updatePatients'}><Link to={'/updatePatients'}>Update Patients</Link></h2>
+                        <h2 className={'menubar'}><Link to={'/addPatients'}>Add Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h2 className={'menubar'}><Link to={'/allPatients'}>Get All Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h2 className={'menubar'}><Link to={'/deletePatients'}>Delete Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h2 className={'menubar'}><Link to={'/updatePatients'}>Update Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <h2 className={'logout'}><Link to={'/'}>LogOut</Link></h2>
+
 
 
                         <Route exact path='/addPatients' render={function(props){  return <AddPatients />}}> </Route>
@@ -36,14 +35,12 @@ export default class Home extends Component {
                         <Route exact path='/updatePatients' render={function(props){  return <UpdatePatients />}}> </Route>
 
 
-
-                        <Route exact path='/' render={function(props){  return <Login />}}> </Route>
-
-
                     </div>
 
                 </Router>
+
             </div>
+
         );
     }
 }
