@@ -20,23 +20,44 @@ export default class ResourseContainer extends Component{
 
                 {<Router>
                     <div>
+                        <div>
+                            <div>
+                                <Link to='/addMachine'>Add Machine</Link>&nbsp;&nbsp;
+                            </div>
+                            <div>
+                                <Link to='/assignDoctor'>Assign Doctor</Link>&nbsp;&nbsp;
+                            </div>
+                            <div>
+                                <Link to='/Materials'>Materials</Link>&nbsp;&nbsp;
+                            </div>
+                            <div>
+                                <Link to='/Nurse'>Nurses</Link>&nbsp;&nbsp;
+                            </div>
+                            <div>
+                                <Link to='/Attendant'>Attendants</Link>&nbsp;&nbsp;
+                            </div>
+                            <div>
+                                <Link to='/Diagnosis'>Diagnosis</Link>&nbsp;&nbsp;
+                            </div>
 
-                         <Link to='/addMachine'>Add Machine</Link>&nbsp;&nbsp;
+                        </div>
+
+
                         <Route exact path='/addMachine' render={function(props){  return <Form />}}></Route>
 
-                         <Link to='/assignDoctor'>Assign Doctor</Link>&nbsp;&nbsp;
+
                         <Route exact path='/assignDoctor' render={function(props){  return <Doctor />}}></Route>
 
-                         <Link to='/Materials'>Materials</Link>&nbsp;&nbsp;
+
                         <Route exact path='/Materials' render={function(props){  return <Material />}}></Route>
 
-                        <Link to='/Nurse'>Nurses</Link>&nbsp;&nbsp;
+
                         <Route exact path='/Nurse' render={function(props){  return <Nurse />}}></Route>
 
-                         <Link to='/Attendant'>Attendants</Link>&nbsp;&nbsp;
+
                         <Route exact path='/Attendant' render={function(props){  return <Attendant />}}></Route>
 
-                         <Link to='/Diagnosis'>Diagnosis</Link>&nbsp;&nbsp;
+
                         <Route exact path='/Diagnosis' render={function(props){  return <Diagnosis />}}></Route>
 
 
