@@ -105,7 +105,9 @@ static get propTypes() {
                                <td><label>NIC</label></td>
                               <td> <input type={'text'} value={PatientLists.NIC} id={'NIC'} ref={'NIC'}/></td>
                                <td className={'set'}><input type={'text'} id={'newNIC'} ref={'newNIC'}/></td>
-                               <button onClick={function(){  document.getElementById("NIC").value= document.getElementById("newNIC").value}}>Add</button>
+                               <button onClick={function(){ if(document.getElementById("newNIC").value.length===10 && ((document.getElementById("newNIC").value.endsWith('v')) || (document.getElementById("newNIC").value.endsWith('V')) ) ){  document.getElementById("NIC").value= document.getElementById("newNIC").value}
+                                                            else{ alert('Invalid NIC')}
+                               }}>Add</button>
                            </tr>
                             <tr>
                                 <td><label>Guardian</label></td>
@@ -129,23 +131,31 @@ static get propTypes() {
                               <td>  <label>Medical History</label></td>
                                 <td><input type={'text'} value={PatientLists.MedicalHistory} id={'MedicalHistory'} ref={'MedicalHistory'}/></td>
                                 <td className={'set'}><input type={'text'} id={'newMedicalHistory'} ref={'newMedicalHistory'}/></td>
-                                <button onClick={function(){  document.getElementById("MedicalHistory").value= document.getElementById("newMedicalHistory").value}}>Add</button>
+                                <button onClick={function(){  document.getElementById("MedicalHistory").value=  document.getElementById("MedicalHistory").value+','+document.getElementById("newMedicalHistory").value}}>Add</button>
                             </tr>
                             <tr>
                                <td> <label>Patient Status</label></td>
-                              <td>  <input type={'text'} value={PatientLists.PatientStatus} id={'PatientStatus'}/></td>
+                                <td> <input type={'text'} id={'PatientStatus'} ref={'PatientStatus'} value={PatientLists.PatientStatus}/></td>
+
+                               <select  id={'PatientStatusList'}>
+                                  <option value="PCU">PCU</option>
+                                  <option value="Admitted">Admitted</option>
+                                  <option value="Discharged">Discharged</option>
+                                  <option value="Transferred">Transferred</option>
+                              </select>
+                                <button onClick={function(){  document.getElementById("PatientStatus").value=document.getElementById("PatientStatusList").value}}>Add</button>
                             </tr>
                            <tr>
                               <td> <label>Treatments</label></td>
                               <td> <input type={'text'} value={PatientLists.Treatments} id={'Treatments'} ref={'Treatments'}/></td>
                                <td className={'set'}><input type={'text'} id={'newTreatments'} ref={'newTreatments'}/></td>
-                               <button onClick={function(){  document.getElementById("Treatments").value= document.getElementById("newTreatments").value}}>Add</button>
+                               <button onClick={function(){  document.getElementById("Treatments").value= document.getElementById("Treatments").value+','+document.getElementById("newTreatments").value}}>Add</button>
                            </tr>
                             <tr>
                                <td> <label>Tests</label></td>
                                <td> <input type={'text'} value={PatientLists.Tests} id={'Test'} ref={'Tests'} className={'set'}/></td>
                                 <td className={'set'}><input type={'text'} id={'newtests'} ref={'newTests'}/></td>
-                                <button onClick={function(){  document.getElementById("Test").value= document.getElementById("newtests").value}}>Add</button>
+                                <button onClick={function(){  document.getElementById("Test").value=document.getElementById("Test").value+','+ document.getElementById("newtests").value}}>Add</button>
                             </tr>
                             <tr >
                                 <td><label>Drugs</label></td>

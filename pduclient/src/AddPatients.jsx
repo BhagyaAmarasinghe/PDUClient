@@ -1,11 +1,14 @@
 import React,{Component} from 'react';
-
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import axios from 'axios';
 import Doctor from "./Doctor";
 require('react-datepicker/dist/react-datepicker.css');
 var Base=require ('./Statics.Common');
+var date;
+var month;
+var year;
+
 
 export default class AddPatients extends Component{
 
@@ -14,43 +17,47 @@ export default class AddPatients extends Component{
         this.state = {
             startDate: moment()
         };
-        this.handleChange = this.handleChange.bind(this);
+
+        date=new Date().getDate();
+        month=new Date().getMonth() +1;
+        year=new Date().getFullYear();
 
     }
 
-    handleChange(date) {
-        const valuedate=date.format();
-        this.setState({
-            startDate: valuedate
-        });
-    }
 
     addPatients(event){
         event.preventDefault();
 
-        axios.post(Base.API+ '/PatientDetails/',{PID:this.refs.PID.value,
-            Pname:this.refs.Pname.value,
-            PtAge:this.refs.PtAge.value,
-            Condition:this.refs.Condition.value,
-            Address:this.refs.Address.value,
-            Guardian:this.refs.Guardian.value,
-            NIC:this.refs.NIC.value,
-            Priority:this.refs.Priority.value,
-            MedicalHistory:this.refs.MedicalHistory.value,
-            PatientStatus:this.refs.PatientStatus.value,
-            Treatments:this.refs.Treatments.value,
-            Tests:this.refs.Tests.value,
-            Drugs:this.refs.Drugs.value,
-            Doctor:this.refs.Doctor.value,
-            Date:this.state.startDate
+        if(!this.refs.PID.value ||!this.refs.Pname.value|| !this.refs.PtAge.value ||!this.refs.Guardian.value||!this.refs.Priority.value||!this.refs.Doctor.value||!this.refs.PatientStatus.value){
+            alert('Error');
+        }else{
+
+            axios.post(Base.API+ '/PatientDetails/',{PID:this.refs.PID.value,
+                Pname:this.refs.Pname.value,
+                PtAge:this.refs.PtAge.value,
+                Condition:this.refs.Condition.value,
+                Address:this.refs.Address.value,
+                Guardian:this.refs.Guardian.value,
+                NIC:this.refs.NIC.value,
+                Priority:this.refs.Priority.value,
+                MedicalHistory:this.refs.MedicalHistory.value,
+                PatientStatus:this.refs.PatientStatus.value,
+                Treatments:this.refs.Treatments.value,
+                Tests:this.refs.Tests.value,
+                Drugs:this.refs.Drugs.value,
+                Doctor:this.refs.Doctor.value,
+                Date:this.state.startDate
             }).then(function (result) {
-            if(result.status===200){
-                alert('Patient Registered');
-            }
-        }).catch(function (err) {
-            alert('Registration Error '+err);
-        })
-    }
+                if(result.status===200){
+                    alert('Patient Registered');
+                }
+            }).catch(function (err) {
+                alert('Registration Error '+err);
+            })
+        }
+        }
+
+
 
     render(){
 
@@ -65,6 +72,7 @@ export default class AddPatients extends Component{
 
                 <form onSubmit={this.addPatients.bind(this)}>
                     <table>
+
                         <tr>
                             <td><label>PID: </label></td>
                             <td><input type={'text'} ref={'PID'}/></td>
@@ -103,7 +111,14 @@ export default class AddPatients extends Component{
                         </tr>
                         <tr>
                             <td><label>Patient Status: </label></td>
-                            <td><input type={'text'} ref={'PatientStatus'}/></td>
+                            <td>
+                                <select ref={'PatientStatus'}>
+                                    <option value="PCU">PCU</option>
+                                    <option value="Admitted">Admitted</option>
+                                    <option value="Discharged">Discharged</option>
+                                    <option value="Transferred">Transferred</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td><label>Treatments: </label></td>
@@ -123,19 +138,12 @@ export default class AddPatients extends Component{
                         </tr>
                         <tr>
                             <td><label>Date: </label></td>
-                            <td>
-                                <DatePicker id={'Data'}
-                                            selected={this.state.startDate}
-                                            onChange={this.handleChange}
-                                            minDate={moment()}
-                                            maxDate={moment().add(0, "days")}
-                                            showDisabledMonthNavigation />
+                            <td><input value={date+'/'+month+'/'+year}/></td>
 
-                            </td>
                         </tr>
                     </table>
 
-                    <button type={'submit'}>Register</button>
+                    <button type={'submit'} >Register</button>
 
                 </form>
                 <div >

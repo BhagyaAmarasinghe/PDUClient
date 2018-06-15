@@ -1,25 +1,75 @@
 
 import React, {Component} from 'react';
 import  ReactDOM from 'react-dom';
+
+import PropTypes from 'prop-types';
 import axios from 'axios';
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import MainFrame from './MainFrame';
 
 var Base =require('./Statics.Common');
-
+var uname;
+var upassword;
 
 
 export default class Login extends Component {
-    userLogin(event) {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            userData: []
+        };
+
+
+    }
+
+    static get propTypes() {
+        return {
+            userData: PropTypes.array,
+            getUserdata: PropTypes.func
+
+        }
+    }
+
+
+
+    AuthenticateUser(username,password){
+
+
+        if(document.getElementById("uname").value==username && document.getElementById("upassword").value==password){
+
+
+           ReactDOM.render(<MainFrame/>,document.getElementById('root'));
+        }
+        else{
+            alert('Login Credential error' );
+        }
+
+    }
+
+    getUserdata(event){
+
+
         event.preventDefault();
-        axios.get(Base.API + '/UserDetails/loginuser/' + {UserName: this.refs.UserName.value}).then(function (result) {
-            if (result.status === 200) {
-                ReactDOM.render(<MainFrame/>,document.getElementById('root'));
+        axios.get(Base.API + '/UserDetails/'+document.getElementById("uname").value).then( (res)=>{
+            if(res.status===200){
+                this.setState({
+
+                    userData: res.data.data || res.data
+                });
+                this.state.userData.map(function(userData){
+                    uname=userData.UserName;
+                    upassword=userData.password;
+                });
+
+                this.AuthenticateUser(uname,upassword);
             }
+
         }).catch(function (err) {
-            alert('Error login ' + err);
-        });
+            console.log(err);
+        })
     }
 
     render() {
@@ -37,14 +87,14 @@ export default class Login extends Component {
                 <p className={'loginusers-intro'}> </p>
 
                 <div className="container">
-                    <form onSubmit={this.userLogin.bind(this)}>
+                    <form onSubmit={this.getUserdata.bind(this)}>
                         <div className="row" style={style}>
                             <div className="col-xs-4 col-sm-4 col-md-2 text-center">
                                 <label>Username: </label>
                             </div>
                             <div className="col-xs-1 col-sm-1">:</div>
                             <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input className="form-control" type={'text'} ref={'UserName'}/><br/><br/>
+                                <input className="form-control" type={'text'} ref={'UserName'} id={'uname'}/><br/><br/>
                             </div>
                         </div>
 
@@ -54,7 +104,7 @@ export default class Login extends Component {
                             </div>
                             <div className="col-xs-1 col-sm-1">:</div>
                             <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input className="form-control" type={'password'} ref={'password'}/><br/><br/>
+                                <input className="form-control" type={'password'} ref={'password'} id={'upassword'}/><br/><br/>
                             </div>
                         </div>
 
