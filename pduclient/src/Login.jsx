@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react';
 import  ReactDOM from 'react-dom';
+
 import PropTypes from 'prop-types';
 import axios from 'axios';
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -10,6 +11,7 @@ import MainFrame from './MainFrame';
 var Base =require('./Statics.Common');
 var uname;
 var upassword;
+
 
 export default class Login extends Component {
 

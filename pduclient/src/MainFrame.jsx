@@ -8,6 +8,7 @@ import ResourseContainer from "./ResourseContainer";
 import DrugContainer from './DrugContainer';
 import TreatmentContainer from "./TreatmentContainer";
 import EmergencyContainer from './EmergencyContainer';
+import LogOut from "./LogOut";
 
 
 
@@ -17,6 +18,7 @@ export default class mainFrame extends Component {
 
 
     render() {
+
         const style = {
             marginTop: "20px",
             border_radius: "4px"
@@ -58,6 +60,7 @@ export default class mainFrame extends Component {
                         <Route exact path='/DrugHandling' render={function(props){  return <DrugContainer />}}> </Route>
                         <Route exact path='/TreatmentHandling' render={function(props){  return <TreatmentContainer />}}> </Route>
                         <Route exact path='/EmergencyHandling' render={function(props){  return <EmergencyContainer />}}> </Route>
+                        <Route exact path='/logout' render={function(props){  return <LogOut/>}}> </Route>
 
 
                     </div>
