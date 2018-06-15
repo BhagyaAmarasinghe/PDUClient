@@ -25,6 +25,12 @@
 h2.login{
   display: inline-block;
 }
+
+#inline{
+  display: inline-block;
+}
+
+
 .set,.divDoc{
   display: inline-block;
 }

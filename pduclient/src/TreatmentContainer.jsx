@@ -20,10 +20,10 @@ export default class TreatmentContainer extends Component {
                     <div align="center">
                         <div className="submenu">
                             <div className="col">
-                                <Link className="link" to="/treat">View Treatments</Link>
+                                <h2><Link className="link" to="/treat">View Treatments</Link></h2>
                             </div>&nbsp;&nbsp;&nbsp;&nbsp;
                             <div className="col">
-                                <Link className="link" to="/addTreat">Manage Treatments</Link>
+                                <h2><Link className="link" to="/addTreat">Manage Treatments</Link></h2>
                             </div>&nbsp;&nbsp;&nbsp;&nbsp;
 
 

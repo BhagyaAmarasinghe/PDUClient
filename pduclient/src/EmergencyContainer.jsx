@@ -19,7 +19,7 @@ export default class EmergencyContainer extends Component {
                     <div align="center">
 
                         <div className="col">
-                            <Link className="link" to="/emergencyList">Emergency Call List</Link>
+                            <h2> <Link className="link" to="/emergencyList">Emergency Call List</Link></h2>
                         </div>
 
                         <Route path="/emergencyList" render={props =>{

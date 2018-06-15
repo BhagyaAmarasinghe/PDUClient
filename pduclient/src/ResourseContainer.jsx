@@ -21,21 +21,21 @@ export default class ResourseContainer extends Component{
                 <Router>
                     <div>
                         <div>
-                            <div>
-                                <Link to='/addMachine'>Add Machine</Link>&nbsp;&nbsp;
-                            </div>
-                            <div>
-                                <Link to='/Materials'>Materials</Link>&nbsp;&nbsp;
-                            </div>
-                            <div>
-                                <Link to='/Nurse'>Nurses</Link>&nbsp;&nbsp;
-                            </div>
-                            <div>
-                                <Link to='/Attendant'>Attendants</Link>&nbsp;&nbsp;
-                            </div>
-                            <div>
-                                <Link to='/Diagnosis'>Diagnosis</Link>&nbsp;&nbsp;
-                            </div>
+                            <div className={'login'}>
+                                <h2 > <Link to='/addMachine'>Add Machine</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className={'login'}>
+                                <h2 > <Link to='/Materials'>Materials</Link></h2>
+                            </div >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className={'login'}>
+                                <h2> <Link to='/Nurse'>Nurses</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className={'login'}>
+                                <h2> <Link to='/Attendant'>Attendants</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className={'login'}>
+                                <h2 > <Link to='/Diagnosis'>Diagnosis</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                         </div>
 

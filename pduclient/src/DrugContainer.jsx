@@ -19,11 +19,11 @@ export default class DrugContainer extends Component {
                 <Router>
                     <div className='submenu'>
                         <div className="col">
-                            <Link className="link" to="/">View Drugs</Link>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <h2><Link className="link" to="/">View Drugs</Link></h2>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div className="col">
-                            <Link className="link" to="/addDrugs">Add Drugs</Link>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <h2> <Link className="link" to="/addDrugs">Add Drugs</Link></h2>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
