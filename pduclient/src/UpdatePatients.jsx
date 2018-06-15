@@ -105,7 +105,9 @@ static get propTypes() {
                                <td><label>NIC</label></td>
                               <td> <input type={'text'} value={PatientLists.NIC} id={'NIC'} ref={'NIC'}/></td>
                                <td className={'set'}><input type={'text'} id={'newNIC'} ref={'newNIC'}/></td>
-                               <button onClick={function(){  document.getElementById("NIC").value= document.getElementById("newNIC").value}}>Add</button>
+                               <button onClick={function(){ if(document.getElementById("newNIC").value.length===10 && ((document.getElementById("newNIC").value.endsWith('v')) || (document.getElementById("newNIC").value.endsWith('V')) ) ){  document.getElementById("NIC").value= document.getElementById("newNIC").value}
+                                                            else{ alert('Invalid NIC')}
+                               }}>Add</button>
                            </tr>
                             <tr>
                                 <td><label>Guardian</label></td>
