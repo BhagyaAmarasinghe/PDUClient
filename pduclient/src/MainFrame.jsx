@@ -8,11 +8,11 @@ import ResourseContainer from "./ResourseContainer";
 import DrugContainer from './DrugContainer';
 import TreatmentContainer from "./TreatmentContainer";
 import EmergencyContainer from './EmergencyContainer';
-<<<<<<< HEAD
+
 import BillContainer from "./BillContainer";
-=======
+
 import LogOut from "./LogOut";
->>>>>>> 8034cd0d20331665e25dd47d0d6c564088d94c45
+
 
 
 
@@ -39,27 +39,27 @@ export default class mainFrame extends Component {
                     <div align="center">
                         <div className="row" style={style}>
 
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <h2 className={'menubar btn-primary btn-block btn-dark'} ><Link to={'/PatientHandling'}>Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/ResourceHandling'}>Resources</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/DrugHandling'}>Drugs</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/TreatmentHandling'}>Treatments</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/EmergencyHandling'}>Emergency List</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/Bill'}>Generate Bill</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
+                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
+                                <h2 className={'menubar btn-primary btn-block btn-dark'} ><Link to={'/PatientHandling'} className={'link'}>Patients</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'} >
+                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/ResourceHandling'}>Resources</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
+                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/DrugHandling'}>Drugs</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
+                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/TreatmentHandling'}>Treatments</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
+                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/EmergencyHandling'}>Emergency List</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
+                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/Bill'}>Generate Bill</Link></h2>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/logout'}>LogOut</Link></h2>
-                            </div>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
 
                         <Route exact path='/PatientHandling' render={function(props){  return  <PatientContainer/>}}> </Route>
@@ -67,11 +67,11 @@ export default class mainFrame extends Component {
                         <Route exact path='/DrugHandling' render={function(props){  return <DrugContainer />}}> </Route>
                         <Route exact path='/TreatmentHandling' render={function(props){  return <TreatmentContainer />}}> </Route>
                         <Route exact path='/EmergencyHandling' render={function(props){  return <EmergencyContainer />}}> </Route>
-<<<<<<< HEAD
+
                         <Route exact path='/Bill' render={function(props){  return <BillContainer/>}}> </Route>
-=======
+
                         <Route exact path='/logout' render={function(props){  return <LogOut/>}}> </Route>
->>>>>>> 8034cd0d20331665e25dd47d0d6c564088d94c45
+
 
 
                     </div>

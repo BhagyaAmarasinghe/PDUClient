@@ -17,7 +17,7 @@ export default class BillContainer extends Component {
                 <Router>
                     <div className='submenu'>
                         <div className="col">
-                            <Link className="link" to="/">Calculate Discharge Bill</Link>
+                            <h2><Link className="link" to="/">Calculate Discharge Bill</Link></h2>
                         </div>&nbsp;&nbsp;&nbsp;&nbsp;
 
                         <Route exact path="/" render={props =>{
