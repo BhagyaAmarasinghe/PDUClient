@@ -103,7 +103,14 @@ export default class AddPatients extends Component{
                         </tr>
                         <tr>
                             <td><label>Patient Status: </label></td>
-                            <td><input type={'text'} ref={'PatientStatus'}/></td>
+                            <td>
+                                <select ref={'PatientStatus'}>
+                                    <option value="PCU">PCU</option>
+                                    <option value="Admitted">Admitted</option>
+                                    <option value="Discharged">Discharged</option>
+                                    <option value="Transferred">Transferred</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td><label>Treatments: </label></td>
