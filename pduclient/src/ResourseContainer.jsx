@@ -21,22 +21,22 @@ export default class ResourseContainer extends Component{
                 {<Router>
                     <div>
 
-                        <button> <Link to='/addMachine'>Add Machine</Link></button>&nbsp;&nbsp;
+                         <Link to='/addMachine'>Add Machine</Link>&nbsp;&nbsp;
                         <Route exact path='/addMachine' render={function(props){  return <Form />}}></Route>
 
-                        <button> <Link to='/assignDoctor'>Assign Doctor</Link></button>&nbsp;&nbsp;
+                         <Link to='/assignDoctor'>Assign Doctor</Link>&nbsp;&nbsp;
                         <Route exact path='/assignDoctor' render={function(props){  return <Doctor />}}></Route>
 
-                        <button> <Link to='/Materials'>Materials</Link></button>&nbsp;&nbsp;
+                         <Link to='/Materials'>Materials</Link>&nbsp;&nbsp;
                         <Route exact path='/Materials' render={function(props){  return <Material />}}></Route>
 
-                        <button> <Link to='/Nurse'>Nurses</Link></button>&nbsp;&nbsp;
+                        <Link to='/Nurse'>Nurses</Link>&nbsp;&nbsp;
                         <Route exact path='/Nurse' render={function(props){  return <Nurse />}}></Route>
 
-                        <button> <Link to='/Attendant'>Attendants</Link></button>&nbsp;&nbsp;
+                         <Link to='/Attendant'>Attendants</Link>&nbsp;&nbsp;
                         <Route exact path='/Attendant' render={function(props){  return <Attendant />}}></Route>
 
-                        <button> <Link to='/Diagnosis'>Diagnosis</Link></button>&nbsp;&nbsp;
+                         <Link to='/Diagnosis'>Diagnosis</Link>&nbsp;&nbsp;
                         <Route exact path='/Diagnosis' render={function(props){  return <Diagnosis />}}></Route>
 
 
