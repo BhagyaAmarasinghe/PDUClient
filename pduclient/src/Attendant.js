@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
-import axios                from 'axios';
-import PropTypes            from 'prop-types';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-var Base  					= require('./Statics.Common');
+var Base = require('./Statics.Common');
 
 
-class Attendant extends Component{
-    static get PropTypes(){
+class Attendant extends Component {
+    static get PropTypes() {
         return {
-            attendants:PropTypes.array
-
+            attendants: PropTypes.array
         }
     }
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            attendants:[]
-
+        this.state = {
+            attendants: []
         };
     }
 
-    addAttendant(event){
+    addAttendant(event) {
         event.preventDefault();
 
-        axios.post(Base.API+'/Attendant',{att_id:this.refs.att_id.value,att_name:this.refs.att_name.value,att_nic:this.refs.att_nic.value,att_age:this.refs.att_age.value,att_address:this.refs.att_address.value,att_ward:this.refs.att_ward.value}).then(function (result) {
-            if(result.status == 200){
+        axios.post(Base.API + '/Attendant', { att_id: this.refs.att_id.value, att_name: this.refs.att_name.value, att_nic: this.refs.att_nic.value, att_age: this.refs.att_age.value, att_address: this.refs.att_address.value, att_ward: this.refs.att_ward.value }).then(function (result) {
+            if (result.status == 200) {
                 console.log('successfully added');
                 alert("successfully added");
 
@@ -43,11 +42,11 @@ class Attendant extends Component{
         })
     }
 
-    updateNurse(event){
+    updateNurse(event) {
         event.preventDefault();
 
-        axios.put(Base.API+'/Attendant/'+this.refs.att_id.value,{att_id:this.refs.att_id.value,att_name:this.refs.att_name.value,att_nic:this.refs.att_nic.value,att_age:this.refs.att_age.value,att_address:this.refs.att_address.value,att_ward:this.refs.att_ward.value}).then(function (result) {
-            if(result.status==200){
+        axios.put(Base.API + '/Attendant/' + this.refs.att_id.value, { att_id: this.refs.att_id.value, att_name: this.refs.att_name.value, att_nic: this.refs.att_nic.value, att_age: this.refs.att_age.value, att_address: this.refs.att_address.value, att_ward: this.refs.att_ward.value }).then(function (result) {
+            if (result.status == 200) {
                 console.log('successfully updated');
                 alert("successfully updated");
             }
@@ -57,99 +56,162 @@ class Attendant extends Component{
         })
     }
 
-    deleteNurse(event){
+    deleteNurse(event) {
         event.preventDefault();
-        axios.delete(Base.API+'/Attendant/'+this.refs.att_id.value).then(function (result) {
-            if(result==200){
+        axios.delete(Base.API + '/Attendant/' + this.refs.att_id.value).then(function (result) {
+            if (result == 200) {
                 console.log('successfully removed');
                 alert('successfully removed')
             }
         })
 
     }
-    getNurse(event){
+    getNurse(event) {
 
         event.preventDefault();
 
+        axios.get(Base.API + '/Attendant').then(result => {
+            if (result.status == 200) {
+                debugger
+                this.setState({
 
-        axios.get(Base.API +'/Attendant').then(result => {
-            if(result.status == 200){
-            debugger
-            this.setState({
+                    nurses: result.data.data
 
-                nurses:result.data.data
-
-            })
-            console.log("successful")
-            console.log(this.state.attendants)
-            debugger
-        }
-    }).catch(function (reason) {
+                })
+                console.log("successful")
+                console.log(this.state.attendants)
+                debugger
+            }
+        }).catch(function (reason) {
             alert('could not get the attendants list')
             console.log(reason);
         })
 
     }
-    render(){
 
+    clearForm = () => {
+
+    }
+
+    render() {
         var attendant = this.state.attendants
-        return(
-            <div class = 'attendants'>
-            <form>
-            <lable>Attendant id :</lable><br/>
-        <input type='text' ref='att_id'></input><br/><br/>
-            <lable>Attendant Name :</lable><br/>
-        <input type='text' ref='att_name'></input><br/><br/>
-            <lable>NIC :</lable><br/>
-        <input type='text' ref='att_nic'></input><br/><br/>
-            <lable>Age :</lable><br/>
-        <input type='text' ref='att_age'></input><br/><br/><br/>
-            <lable>Address :</lable><br/>
-        <input type='text' ref='att_address'></input><br/><br/><br/>
-            <lable>Ward :</lable><br/>
-        <input type='text' ref='att_ward'></input><br/><br/><br/>
+
+        const style = {
+            marginTop: "20px"
+        };
+
+        return (
+            <div class='attendants'>
+                <div className="container">
+                    <form>
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Attendant id</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input id="att_id" className="form-conotrol" type='text' ref='att_id'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Attendant Name</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input className="form-conotrol" type='text' ref='att_name'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>NIC</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input className="form-conotrol" type='text' ref='att_nic'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Age</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input type='text' className="form-conotrol" ref='att_age'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Address</label><br />
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input type='text' className="form-conotrol" ref='att_address'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Ward</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input type='text' className="form-conotrol" ref='att_ward'></input>
+                            </div>
+                        </div>
+
+                        {/* <button type='submit' onClick={this.addAttendant.bind(this)}>ADD</button>&nbsp;
+                    <button type='submit' onClick={this.updateAttendant.bind(this)}>UPDATE</button>&nbsp;
+                    <button type='submit' onClick={this.deleteAttendant.bind(this)}>DELETE</button>&nbsp; */}
+
+                    </form>
+
+                    <div className="row" style={style}>
+                        <div className="col-xs-2 col-sm-2 col-md-2">
+                            <button className="btn btn-primary btn-block btn-dark" type='submit' onClick={(event) => this.getAttendant(event)}>VIEW ATTENDANTS</button>
+                        </div>
+                        <div className="col-xs-2 col-sm-2 col-md-2">
+                            <button className="btn btn-primary btn-block btn-danger" onClick={this.clearForm} type='button'>Clear</button>
+                        </div>
+                    </div>
 
 
-            <button type='submit' onClick={this.addAttendant.bind(this)}>ADD</button>&nbsp;
-        <button type='submit' onClick={this.updateAttendant.bind(this)}>UPDATE</button>&nbsp;
-        <button type='submit' onClick={this.deleteAttendant.bind(this)}>DELETE</button>&nbsp;
+                    <div className="row table-responsive" style={style}>
+                        <table className="Attendants table table-bordered">
+                            <thead>
+                            <tr>
+                                <td><b>Attendant ID</b></td>
+                                <td><b>Name</b></td>
+                                <td><b>NIC</b></td>
+                                <td><b>Age</b></td>
+                                <td><b>Address</b></td>
+                                <td><b>Ward</b></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {this.state.attendants.map(function (attendant) {
+                                return (
+                                    <tr key={attendant.nur_id}>
+                                        <td>{attendant.att_id}</td>
+                                        <td>{attendant.att_name}</td>
+                                        <td>{attendant.att_nic}</td>
+                                        <td>{attendant.att_age}</td>
+                                        <td>{attendant.att_address}</td>
+                                        <td>{attendant.att_ward}</td>
 
-        </form><br/><br/>
-
-        <button type='submit' onClick={(event)=>this.getAttendant(event)}>VIEW ATTENDANTS</button>&nbsp;
-
-        <div>
-        <table className="Attendants">
-            <thead>
-            <tr>
-            <td>Attendant ID</td>
-        <td> Name</td>
-        <td> NIC</td>
-        <td> Age</td>
-        <td> Address</td>
-        <td> Ward</td>
-        </tr>
-        </thead>
-        <tbody>
-        {this.state.attendants.map(function (attendant) {
-            return (
-                <tr key={attendant.nur_id}>
-        <td>{attendant.att_id}</td>
-            <td>{attendant.att_name}</td>
-            <td>{attendant.att_nic}</td>
-            <td>{attendant.att_age}</td>
-            <td>{attendant.att_address}</td>
-            <td>{attendant.att_ward}</td>
-
-            </tr>
-        )
-        })}
-    </tbody>
-        </table>
-        </div>
-
-        </div>
-    );
+                                    </tr>
+                                )
+                            })}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        );
     }
 
 
