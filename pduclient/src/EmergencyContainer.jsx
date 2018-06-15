@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import './PatientContainer.css';
+import EmergencyList from  './EmergencyList';
 
 
 
@@ -17,10 +18,15 @@ export default class EmergencyContainer extends Component {
                 <Router>
                     <div align="center">
 
-                        <h2>Emergency HERE</h2>
+                        <div className="col">
+                            <Link className="link" to="/emergencyList">Emergency Call List</Link>
+                        </div>
 
-
+                        <Route path="/emergencyList" render={props =>{
+                            return<EmergencyList/>
+                        }}/>
                     </div>
+
 
                 </Router>
 
