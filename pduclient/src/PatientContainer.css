@@ -2,6 +2,10 @@ div.login{
     display: inline-block;
 }
 
+div.col{
+    display:inline-block;
+}
+
 th, td {
     border: 1px solid black;
 }
