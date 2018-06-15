@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import AddPatients from './AddPatients';
 import GetAllPatients from './getAllPatients';
 import DeletePatients from './DeletePatient';
 import UpdatePatients from './UpdatePatients'
-import './PatientContainer.css';
+
 
 
 
