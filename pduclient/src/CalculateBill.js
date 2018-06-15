@@ -56,6 +56,12 @@ class CalculateBill extends Component{
     getDrugsTotal(event) {
         event.preventDefault();
         var drugs = this.refs.Drugs.value;
+
+        if(drugs===""){
+            document.getElementById("DrugTot").value=0;
+        }
+
+        else{
         var splitDrugs = drugs.split(',');
         var total=0;
         var x =0;
@@ -79,7 +85,7 @@ class CalculateBill extends Component{
             }).catch(err => {
                 alert(err);
             });
-        }
+        }}
     }
 
     subDrug(total){
@@ -88,13 +94,19 @@ class CalculateBill extends Component{
     getTestsTotal(event) {
         event.preventDefault();
         var tests = this.refs.Tests.value;
+
+        if(tests===""){
+            document.getElementById("TestTot").value=0;
+        }
+
+        else{
         var splitTests = tests.split(',');
         var total=0;
         var x =0;
 
 
 
-        console.log(splitTests);
+
         for (var i = 0; i < splitTests.length; i++) {
 
             axios.get(Base.API + '/Tests/' + splitTests[i]).then(result => {
@@ -118,7 +130,7 @@ class CalculateBill extends Component{
                 alert(err);
 
             });
-        }
+        }}
     }
 
     subTest(total){
@@ -128,6 +140,14 @@ class CalculateBill extends Component{
     getTreatTotal(event) {
         event.preventDefault();
         var treats = this.refs.Treatments.value;
+
+        if(treats===""){
+            document.getElementById("TreatTot").value=0;
+        }
+
+        else{
+
+
         var splitTreats = treats.split(',');
         var total=0;
         var x =0;
@@ -157,6 +177,7 @@ class CalculateBill extends Component{
 
             });
         }
+        }
     }
 
     subTreat(total){
@@ -183,7 +204,7 @@ class CalculateBill extends Component{
             <form >
                 <br/><br/><br/>
                 <label>ID</label>&nbsp;
-                <input type="text" ref='id'/><br/><br/>
+                <input type="text" ref='id'/>&nbsp; <button type="submit" className="button" onClick={this.autoFill.bind(this)}>AutoFill</button><br/><br/>
                 <label>Name</label>&nbsp;
                 <input type="text" ref='Pname'/><br/><br/>
                 <label>Registered Date</label>&nbsp;
@@ -201,16 +222,14 @@ class CalculateBill extends Component{
                 <button type="submit" className="button" onClick={this.getTreatTotal.bind(this)}>Treatments Total</button>&nbsp;
                 <input type="text" id="TreatTot" /><br/><br/>
                 <br/><br/><br/>
+                <button type="submit" className="button" onClick={this.subTotal.bind(this)}>Calculate Total</button>
+                <br/><br/><br/>
                 <label>Sub Total: </label>&nbsp;
                 <input type="text" id="SubTotal" /><br/><br/>
                 <br/><br/><br/>
 
 
-                <button type="submit" className="button" onClick={this.autoFill.bind(this)}>AutoFill</button>
 
-
-
-                <button type="submit" className="button" onClick={this.subTotal.bind(this)}>Calculate Total</button>
 
             </form>
 

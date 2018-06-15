@@ -8,16 +8,8 @@ import ResourseContainer from "./ResourseContainer";
 import DrugContainer from './DrugContainer';
 import TreatmentContainer from "./TreatmentContainer";
 import EmergencyContainer from './EmergencyContainer';
-<<<<<<< HEAD
-=======
-
-import BillContainer from "./BillContainer";
-
-import LogOut from "./LogOut";
 
 
-
->>>>>>> 2cee85eccab78be5e46c4a22e5fe1a6e19536e5d
 
 import BillContainer from "./BillContainer";
 
