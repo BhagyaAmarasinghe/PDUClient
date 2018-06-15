@@ -101,24 +101,79 @@ class AddDrug extends Component{
 
 
     render(){
+
+        const style = {
+            marginTop: "20px"
+        };
         return <div className="page">
             <form onSubmit={this.addDrug.bind(this) }>
                 <br/><br/><br/>
-                <label>ID</label>&nbsp;
-                <input type="text" ref='id'/><br/><br/>
-                <label>Name</label>&nbsp;
-                <input type="text" ref='name'/><br/><br/>
-                <label>Type</label>&nbsp;
-                <input type="text" ref='type'/><br/><br/>
-                <label>Price</label>&nbsp;
-                <input type="text" ref='price'/><br/><br/>
-                <label>Prescribed For</label>&nbsp;
-                <input type="text" ref='prescribed_for'/>
-                <br/><br/><br/>
+<div align="center">
+                <div className="row" style={style}>
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>ID: </label>
+                    </div>
 
-                <button type="submit" className="button" >Add</button>&nbsp;&nbsp;
-                <button type="submit" className="button" onClick={this.updateDrug.bind(this)}>Update Drug</button>&nbsp;&nbsp;
-                <button type="submit" className="button" onClick={this.autoFill.bind(this)}>AutoFill</button>
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'id'}/><br/><br/>
+                    </div>
+                </div>
+
+                <div className="row" style={style}>
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Name: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'name'}/><br/><br/>
+                    </div>
+                </div>
+
+                <div className="row" style={style}>
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Type: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'type'}/><br/><br/>
+                    </div>
+                </div>
+
+                <div className="row" style={style}>
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Price: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'price'}/><br/><br/>
+                    </div>
+                </div>
+
+                <div className="row" style={style}>
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Prescribed For: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'prescribed_for'}/><br/><br/>
+                    </div>
+                </div>
+</div>
+
+                <br/><br/><br/>
+    <div align="center">
+                <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                    <button className="btn btn-primary btn-block btn-dark" type={'submit'}>Add</button>
+                </div><br/>
+
+                <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                    <button className="btn btn-primary btn-block btn-dark" type={'submit'} onClick={this.updateDrug.bind(this)}>Update Drug</button>
+                </div><br/>
+
+                <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                    <button className="btn btn-primary btn-block btn-dark" type={'submit'} onClick={this.autoFill.bind(this)}>Auto fill</button>
+                </div>
+    </div>
 
             </form>
 

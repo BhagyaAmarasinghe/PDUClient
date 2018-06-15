@@ -56,8 +56,13 @@ var  doctors = this.state.doctors
         </p>
         <form onChange={this.getDoctors.bind(this)}>
         <lable>Priority Status :</lable><br/>
-        <input type='text' ref='d_ps'></input><br/><br/><br/>
 
+            <div className="col-xs-4 col-sm-4 col-md-3">
+                <input className="form-control" type={'text'} ref={'d_ps'} /><br/><br/>
+            </div>
+            <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                <button className="btn btn-primary btn-block btn-dark" type={'submit'}>Add</button>
+            </div>
             </form>
     <table className="table">
         <thead>

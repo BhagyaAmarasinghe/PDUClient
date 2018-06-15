@@ -88,7 +88,7 @@ export default class Login extends Component {
 
                 <div className="container">
                     <form onSubmit={this.getUserdata.bind(this)}>
-                                               <div className="row" style={style}>
+                        <div className="row" style={style}>
                             <div className="col-xs-4 col-sm-4 col-md-2 text-center">
                                 <label>Username: </label>
                             </div>

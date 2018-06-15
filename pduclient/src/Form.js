@@ -33,14 +33,36 @@ addMachine(event){
             please enter the details of the app to register a machine
         </p>
             <form onSubmit={this.addMachine.bind(this)}>
-                    <lable>Machine id :</lable><br/>
-                    <input type='text' ref='m_id'></input><br/><br/>
-                    <lable>Machine Name :</lable><br/>
-                    <input type='text'  ref='m_name'></input><br/><br/>
-                    <lable>Price :</lable><br/>
-                    <input type='text' ref='m_price'></input><br/><br/>
-                    <button type='submit'>ADD</button>
 
+    <div align="center">
+                <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                    <label>Machine ID: </label>
+                </div>
+
+                <div className="col-xs-4 col-sm-4 col-md-3">
+                    <input className="form-control" type={'text'} ref={'m_id'}/><br/><br/>
+                </div>
+
+                 <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Machine Name: </label>
+                 </div>
+
+                  <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'m_name'}/><br/><br/>
+                  </div>
+
+                 <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                       <label>Price: </label>
+                 </div>
+
+                 <div className="col-xs-4 col-sm-4 col-md-3">
+                      <input className="form-control" type={'text'} ref={'m_price'}/><br/><br/>
+                 </div>
+
+                  <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                       <button className="btn btn-primary btn-block btn-dark" type={'submit'}>Login</button>
+                  </div>
+    </div>
             </form>
 
 

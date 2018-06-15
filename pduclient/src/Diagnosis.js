@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios                from 'axios';
+import './App.css';
 import PropTypes            from 'prop-types';
 var Base  					= require('./Statics.Common');
 
@@ -91,53 +92,111 @@ class Diagnostics extends Component{
 
 
     render(){
+
+        const style = {
+            marginTop: "20px"
+        };
         return (
+
+
             <div>
             <form>
-            <lable>Diagnosis Id :</lable><br/>
-        <input type='text' ref='diag_id'></input><br/><br/>
-            <lable>Patient Id :</lable><br/><br/>
-        <input type='text' ref='p_id'></input><br/><br/>
-            <lable>Doctor Id :</lable><br/>
-        <input type='text' ref='d_id'></input><br/><br/>
-            <lable>Diagnosis :</lable><br/>
-        <input type='text' ref='diagnosis'></input><br/><br/>
-            <lable>Treatment :</lable><br/>
-        <input type='text' ref='treatment'></input><br/><br/>
 
-            <button type='Submit' onClick={this.addDiagnostic.bind(this)} >Enter</button>&nbsp;
-        <button type='Submit' onClick={this.updateDiagnosis.bind(this)}>Update</button>&nbsp;
-        <button type='Submit' onClick={this.deleteDiagnosis.bind(this)}>Delete</button>&nbsp;
-        <button type='Submit' onClick={this.getDiagnosis.bind(this)}>Patient</button>
+                <div >
+                    <div className="row" style={style}>
+                        <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                            <label>Diagnosis Id : </label>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-4 col-md-3">
+                            <input className="form-control" type={'text'} ref={'diag_id'} /><br/><br/>
+                        </div>
+                    </div>
+
+                    <div className="row" style={style}>
+                        <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                            <label>Patient Id : </label>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-4 col-md-3">
+                            <input className="form-control" type={'text'} ref={'p_id'} /><br/><br/>
+                        </div>
+                    </div>
+
+                    <div className="row" style={style}>
+                        <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                            <label>Doctor Id : </label>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-4 col-md-3">
+                            <input className="form-control" type={'text'} ref={'d_id'} /><br/><br/>
+                        </div>
+                    </div>
+
+                    <div className="row" style={style}>
+                        <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                            <label>Diagnosis  : </label>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-4 col-md-3">
+                            <input className="form-control" type={'text'} ref={'diagnosis'} /><br/><br/>
+                        </div>
+                    </div>
+
+                    <div className="row" style={style}>
+                        <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                            <label>Treatment: </label>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-4 col-md-3">
+                            <input className="form-control" type={'text'} ref={'treatment'} /><br/><br/>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+        <div align="center">
+                <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                    <button id={'but'} className="btn btn-primary btn-block btn-dark" type={'submit'}  onClick={this.addDiagnostic.bind(this)}>Enter</button>
+                    <button id={'but'} className="btn btn-primary btn-block btn-dark" type={'submit'} onClick={this.updateDiagnosis.bind(this)}>Update</button>
+                    <button id={'but'} className="btn btn-primary btn-block btn-danger" type={'submit'} onClick={this.deleteDiagnosis.bind(this)}>Delete</button>
+                    <button id={'but'} className="btn btn-primary btn-block btn-dark" type={'submit'}  onClick={this.getDiagnosis.bind(this)}>Patient</button>
+                </div>
+        </div>
+
         </form>
-
+    <div align="center">
         <table>
-        <thead>
-        <tr>
-        <td>Name</td>
-        <td>Age</td>
-        <td>Condition</td>
-        <td>Priority</td>
-        <td>History</td>
-        <td>Status</td>
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Condition</td>
+                <td>Priority</td>
+                <td>History</td>
+                <td>Status</td>
 
-        </tr>
-        </thead>
-        <tbody>
-        {this.state.patient.map(function (pat, index) {
-            return(
-                <tr key={index}>
-                <td>{pat.Pname}</td>
-            <td>{pat.PtAge}</td>
-            <td>{pat.Condition}</td>
-            <td>{pat.Priority}</td>
-            <td>{pat.MedicalHistory}</td>
-            <td>{pat.PatientStatus}</td>
             </tr>
-        )
-        })}
-    </tbody>
+            </thead>
+            <tbody>
+            {this.state.patient.map(function (pat, index) {
+                return(
+                    <tr key={index}>
+                        <td>{pat.Pname}</td>
+                        <td>{pat.PtAge}</td>
+                        <td>{pat.Condition}</td>
+                        <td>{pat.Priority}</td>
+                        <td>{pat.MedicalHistory}</td>
+                        <td>{pat.PatientStatus}</td>
+                    </tr>
+                )
+            })}
+            </tbody>
         </table>
+    </div>
+
 
         </div>
 

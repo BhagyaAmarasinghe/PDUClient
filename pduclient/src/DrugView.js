@@ -51,17 +51,7 @@ export default class DrugView extends Component{
     }
 
 
-    /*deleteDrug(){
-        var ID=;
-        axios.delete(Base.API+'/Drugs/'+ID).then(res=>{
-            if(res.status===200) {
-                this.getAllDrugs();
-            }
-        }).catch(err=>{
-            alert(err);
-        })
 
-    }*/
 
 
 
@@ -103,7 +93,10 @@ export default class DrugView extends Component{
             </table>
             <br/><br/>
 
-            <button className="button" onClick={(e)=>this.deleteDrug(e)}>Delete a Drug</button><br/><br/>
+            <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                <button className="btn btn-primary btn-block btn-danger" onClick={(e)=>this.deleteDrug(e)} >Delete a Drug</button>
+            </div>
+
 
 
         </div>

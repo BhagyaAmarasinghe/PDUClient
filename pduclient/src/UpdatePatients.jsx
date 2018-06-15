@@ -75,8 +75,14 @@ static get propTypes() {
         return <div align="center">
             <br/><br/>
             <form onSubmit={this.fillfields.bind(this)}>
-                <input  type={'text'} ref={'PID'}/>
-                <button type={'submit'}>Get All Patients</button>
+
+                <div className="col-xs-4 col-sm-4 col-md-3">
+                    <input className="form-control" type={'text'} ref={'PID'} id={'uname'}/><br/><br/>
+                </div>
+
+                <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                    <button className="btn btn-primary btn-block btn-dark" type={'submit'} >Get All Patients</button>
+                </div>
             </form>
 
             <br/><br/>
@@ -181,32 +187,11 @@ static get propTypes() {
                 </tbody>
             </table>
             <form onSubmit={this.upPatients.bind(this)}>
-                <button type={'submit'}>Submit</button>
+                <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                    <button className="btn btn-primary btn-block btn-dark" type={'submit'}>Update</button>
+                </div>
             </form>
 
-
-
-            {/*<form onSubmit={this.change.bind(this)}>
-            <table>
-                <tr  >
-                    <td className={'drugset'}><input type={'text'} ref={'newDrugs'}/></td>
-                    <button>Add</button>
-                </tr>
-
-                <tr>
-                    <td><label>New Treatments</label></td>
-                    <td><input type={'text'} ref={'newTreatments'}/></td>
-                </tr>
-
-                <tr>
-                    <td><label>New Tests</label></td>
-                    <td><input type={'text'} ref={'newTests'}/></td>
-                </tr>
-
-
-            </table>
-                <button type={'submit'}>Update fields</button>
-            </form>*/}
         </div>
 
     }

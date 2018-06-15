@@ -141,10 +141,10 @@ export default class AddPatients extends Component{
                             <td><input value={date+'/'+month+'/'+year}/></td>
 
                         </tr>
-                    </table>
-
-                    <button type={'submit'} >Register</button>
-
+                    </table><br/><br/>
+                    <div className="col-xs-2 col-sm-2 col-md-2">
+                    <button className={"btn btn-primary btn-block btn-dark" }type={'submit'} >Register</button>
+                    </div>
                 </form>
                 <div >
                    <br/><br/><Doctor/>

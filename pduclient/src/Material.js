@@ -68,13 +68,13 @@ class Material extends Component{
 
     }
     getMaterials(event){
-
+    alert('rr');
         event.preventDefault();
 
 
         axios.get(Base.API +'/Materials').then(result => {
-            if(result.status == 200){
-            debugger
+            if(result.status === 200){
+
             this.setState({
 
                 mat:result.data.data
@@ -82,7 +82,7 @@ class Material extends Component{
             })
             console.log("successful")
             console.log(this.state.mat)
-        debugger
+
         }
         }).catch(function (reason) {
             alert('could not get the material list')
@@ -96,24 +96,61 @@ class Material extends Component{
         return(
             <div class = 'materials'>
                 <form>
-                    <lable>Material id :</lable><br/>
-                    <input type='text' ref='mat_id'></input><br/><br/>
-                    <lable>Material Name :</lable><br/>
-                    <input type='text' ref='mat_name'></input><br/><br/>
-                    <lable>Material Quantity :</lable><br/>
-                    <input type='text' ref='mat_quantity'></input><br/><br/>
-                    <lable>Material price :</lable><br/>
-                    <input type='text' ref='mat_price'></input><br/><br/><br/>
 
-                    <button type='submit' onClick={this.addMaterial.bind(this)}>ADD</button>&nbsp;
-                    <button type='submit' onClick={this.updateMaterial.bind(this)}>UPDATE</button>&nbsp;
-                    <button type='submit' onClick={this.deleteMaterial.bind(this)}>DELETE</button>&nbsp;
+
+    <div align="center">
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Material ID: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'mat_id'}/><br/><br/>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Material Name: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'mat_name'}/><br/><br/>
+                    </div>
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Material Quantity: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'mat_quantity'}/><br/><br/>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>Material Price: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'mat_price'}/><br/><br/>
+                    </div>
+
+
+                    <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                        <button className="btn btn-primary btn-block btn-dark" type={'submit'}  onClick={this.addMaterial.bind(this)}>Add</button>
+                    </div><br/>
+                    <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                        <button className="btn btn-primary btn-block btn-dark" type={'submit'}  onClick={this.updateMaterial.bind(this)}>Update</button>
+                    </div><br/>
+                    <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                        <button className="btn btn-primary btn-block btn-dark" type={'submit'}   onClick={this.deleteMaterial.bind(this)}>Delete</button>
+                    </div>
+
+    </div>
 
                 </form><br/><br/>
+    <div align="center">
+                <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                    <button className="btn btn-primary btn-block btn-dark" type={'submit'}  onClick={(event)=>this.getMaterials(event)}>VIEW MATERIALS</button>
+                </div>
+    </div><br/>
 
-            <button type='submit' onClick={(event)=>this.getMaterials(event)}>VIEW MATERIALS</button>&nbsp;
-
-                <div>
+                <div align="center">
                             <table className="Materials">
                                     <thead>
                                         <tr>

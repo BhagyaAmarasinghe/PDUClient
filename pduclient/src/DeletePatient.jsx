@@ -30,15 +30,22 @@ export default class DeletePatient extends Component{
                 <p className={'deletepatients-intro'}> Enter Patient ID</p>
 
                 <form onSubmit={this.deletePatient.bind(this)}>
-                    <table>
-                        <tr>
-                            <td><label>PID: </label></td>
-                            <td><input type={'text'} ref={'PID'}/></td>
-                        </tr>
 
-                    </table>
 
-                    <button type={'submit'}>Delete</button>
+
+                    <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                        <label>PID: </label>
+                    </div>
+
+                    <div className="col-xs-4 col-sm-4 col-md-3">
+                        <input className="form-control" type={'text'} ref={'PID'} /><br/><br/>
+                    </div>
+
+
+                    <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                        <button className="btn btn-primary btn-block btn-dark" type={'submit'} >Delete</button>
+                    </div>
+
 
                 </form>
             </div>

@@ -42,7 +42,10 @@ export default class getAllPatients extends Component {
     render(){
         return <div align="center">
             <br/><br/>
-            <button type={'submit'} onClick={this.fetchall.bind(this)}>Get All Patients</button>
+
+            <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                <button className="btn btn-primary btn-block btn-dark" type={'submit'} onClick={this.fetchall.bind(this)}>Get All Patients</button>
+            </div>
             <br/><br/>
             <table className="patientTable">
                 <thead>
