@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import  ReactDOM from 'react-dom';
 import axios from 'axios';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import MainFrame from './MainFrame';
 
@@ -22,6 +23,9 @@ export default class Login extends Component {
     }
 
     render() {
+        const style = {
+            marginTop: "20px"
+        };
 
         return (
 
@@ -32,16 +36,36 @@ export default class Login extends Component {
 
                 <p className={'loginusers-intro'}> </p>
 
-                <form onSubmit={this.userLogin.bind(this)}>
-                    <label>Username: </label>
-                    <input type={'text'} ref={'UserName'}/><br/><br/>
+                <div className="container">
+                    <form onSubmit={this.userLogin.bind(this)}>
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                                <label>Username: </label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input className="form-control" type={'text'} ref={'UserName'}/><br/><br/>
+                            </div>
+                        </div>
 
-                    <label>Password: </label>
-                    <input type={'password'} ref={'password'}/><br/><br/>
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-center">
+                                <label>Password: </label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input className="form-control" type={'password'} ref={'password'}/><br/><br/>
+                            </div>
+                        </div>
 
-                    <button type={'submit'}>Login</button>
+                        <div className="row" style={style}>
+                            <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
+                                <button className="btn btn-primary btn-block btn-dark" type={'submit'}>Login</button>
+                            </div>
+                        </div>
 
-                </form>
+                    </form>
+                </div>
             </div>
         );
     }

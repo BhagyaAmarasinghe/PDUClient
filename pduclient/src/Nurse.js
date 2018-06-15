@@ -102,126 +102,125 @@ class Nurse extends Component{
 
 
         return(
-            <div class = 'nurses'>
-                <div className="Container">
-                    <h1 className="Form-title">Add Nurse</h1>
+            <div class='nurses'>
+                <div className="container">
                     <form>
                         <div className="row" style={style}>
                             <div className="col-xs-4 col-sm-4 col-md-2 text-left">
-                                <label>Nurse id :</label><br/>
+                                <label>Nurse id</label>
                             </div>
                             <div className="col-xs-1 col-sm-1">:</div>
                             <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input type='text' className="form-control" ref='nur_id'></input><br/><br/>
-                            </div>
-                        </div>
-                        <div className="row" style={style}>
-                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
-                                <label>Nurse Name :</label><br/>
-                            </div>
-                            <div className="col-xs-1 col-sm-1">:</div>
-                            <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input type='text' className="form-control" ref='nur_name'></input><br/><br/>
-                            </div>
-                        </div>
-                        <div className="row" style={style}>
-                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
-                                <label>NIC :</label><br/>
-                            </div>
-                            <div className="col-xs-1 col-sm-1">:</div>
-                            <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input type='text' className="form-control" ref='nur_nic'></input><br/><br/>
-                            </div>
-                        </div>
-                        <div className="row" style={style}>
-                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
-                                <label>Age :</label><br/>
-                            </div>
-                            <div className="col-xs-1 col-sm-1">:</div>
-                            <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input type='text' className="form-control" ref='nur_age'></input><br/><br/><br/>
-                            </div>
-                        </div>
-                        <div className="row" style={style}>
-                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
-                                <label>Address :</label><br/>
-                            </div>
-                            <div className="col-xs-1 col-sm-1">:</div>
-                            <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input type='text' className="form-control" ref='nur_address'></input><br/><br/><br/>
-                            </div>
-                        </div>
-                        <div className="row" style={style}>
-                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
-                                <label>Ward :</label>
-                            </div>
-                            <div className="col-xs-1 col-sm-1">:</div>
-                            <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input type='text' className="form-control" ref='nur_ward'></input><br/><br/><br/>
-                            </div>
-                        </div>
-                        <div className="row" style={style}>
-                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
-                                <label>Priority status :</label><br/>
-                            </div>
-                            <div className="col-xs-1 col-sm-1">:</div>
-                            <div className="col-xs-4 col-sm-4 col-md-3">
-                                <input type='text' className="form-control" ref='nur_priority_status'></input><br/><br/><br/>
+                                <input id="att_id" className="form-conotrol" type='text' ref='nur_id'></input>
                             </div>
                         </div>
 
                         <div className="row" style={style}>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <button className="btn btn-primary btn-block btn-dark" type='submit' onClick={this.addNurse.bind(this)}>ADD</button>&nbsp;
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>nurse Name</label>
                             </div>
-                            <div className="col-xs-2 col-sm-2 col-md-2">
-                                <button className="btn btn-primary btn-block btn-dark" type='submit' onClick={this.updateNurse.bind(this)}>UPDATE</button>&nbsp;
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input className="form-conotrol" type='text' ref='nur_name'></input>
                             </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>NIC</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input className="form-conotrol" type='text' ref='nur_nic'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Age</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input type='text' className="form-conotrol" ref='nur_age'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Address</label><br />
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input type='text' className="form-conotrol" ref='nur_address'></input>
+                            </div>
+                        </div>
+
+                        <div className="row" style={style}>
+                            <div className="col-xs-4 col-sm-4 col-md-2 text-left">
+                                <label>Ward</label>
+                            </div>
+                            <div className="col-xs-1 col-sm-1">:</div>
+                            <div className="col-xs-4 col-sm-4 col-md-3">
+                                <input type='text' className="form-conotrol" ref='nur_ward'></input>
+                            </div>
+                        </div>
+                        <div className="row" style={style}>
                             <div className="col-xs-2 col-sm-2 col-md-2">
-                                <button className="btn btn-primary btn-block btn-dark" type='submit' onClick={this.deleteNurse.bind(this)}>DELETE</button>&nbsp;
+                                <button className="btn btn-primary btn-block btn-dark"  type='submit' onClick={this.addNurse.bind(this)}>ADD</button>&nbsp;
+                            </div>
+
+                            <div className="col-xs-2 col-sm-2 col-md-2">
+                                <button className="btn btn-primary btn-block btn-dark"  type='submit' onClick={this.updateNurse.bind(this)}>UPDATE</button>&nbsp;
+                            </div>
+
+                            <div className="col-xs-2 col-sm-2 col-md-2">
+                                <button className="btn btn-primary btn-block btn-dark"  type='submit' onClick={this.deleteNurse.bind(this)}>DELETE</button>&nbsp;
                             </div>
                         </div>
 
                     </form>
+
                     <div className="row" style={style}>
                         <div className="col-xs-2 col-sm-2 col-md-2">
-                            <button className="btn btn-primary btn-block btn-danger" type='submit' onClick={(event)=>this.getNurse(event)}>VIEW NURSES</button>&nbsp;
+                            <button className="btn btn-primary btn-block btn-dark" type='submit' onClick={(event) => this.getAttendant(event)}>VIEW ATTENDANTS</button>
+                        </div>
+                        <div className="col-xs-2 col-sm-2 col-md-2">
+                            <button className="btn btn-primary btn-block btn-danger" onClick={this.clearForm} type='button'>Clear</button>
                         </div>
                     </div>
 
 
-                <div className="row table-responsive" style={style}>
-                    <table className="Nurses table-bordered">
-                        <thead>
-                        <tr>
-                            <td>Nurse ID</td>
-                            <td> Name</td>
-                            <td> NIC</td>
-                            <td> Age</td>
-                            <td> Address</td>
-                            <td> Ward</td>
-                            <td> Priority status</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {this.state.nurses.map(function (nurse) {
-                            return (
-                                <tr key={nurse.nur_id}>
-                                    <td>{nurse.nur_id}</td>
-                                    <td>{nurse.nur_name}</td>
-                                    <td>{nurse.nur_nic}</td>
-                                    <td>{nurse.nur_age}</td>
-                                    <td>{nurse.nur_address}</td>
-                                    <td>{nurse.nur_ward}</td>
-                                    <td>{nurse.nur_priority_status}</td>
-                                </tr>
-                            )
-                        })}
-                        </tbody>
-                    </table>
-                </div>
-                </div>
+                    <div className="row table-responsive" style={style}>
+                        <table className="Attendants table table-bordered">
+                            <thead>
+                            <tr>
+                                <td><b>Attendant ID</b></td>
+                                <td><b>Name</b></td>
+                                <td><b>NIC</b></td>
+                                <td><b>Age</b></td>
+                                <td><b>Address</b></td>
+                                <td><b>Ward</b></td>
+                                <td> Priority status</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {this.state.nurses.map(function (nurse) {
+                                return (
+                                    <tr key={nurse.nur_id}>
+                                        <td>{nurse.nur_id}</td>
+                                        <td>{nurse.nur_name}</td>
+                                        <td>{nurse.nur_nic}</td>
+                                        <td>{nurse.nur_age}</td>
+                                        <td>{nurse.nur_address}</td>
+                                        <td>{nurse.nur_ward}</td>
 
+                                    </tr>
+                                )
+                            })}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         );
     }

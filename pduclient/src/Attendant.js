@@ -164,9 +164,17 @@ class Attendant extends Component {
                             </div>
                         </div>
 
-                        {/* <button type='submit' onClick={this.addAttendant.bind(this)}>ADD</button>&nbsp;
-                    <button type='submit' onClick={this.updateAttendant.bind(this)}>UPDATE</button>&nbsp;
-                    <button type='submit' onClick={this.deleteAttendant.bind(this)}>DELETE</button>&nbsp; */}
+                        <div className="row" style={style}>
+                            <div className="col-xs-2 col-sm-2 col-md-2">
+                                <button type='submit' onClick={this.addAttendant.bind(this)}>ADD</button>&nbsp;
+                            </div>
+                            <div className="col-xs-2 col-sm-2 col-md-2">
+                                <button type='submit' onClick={this.updateAttendant.bind(this)}>UPDATE</button>&nbsp;
+                            </div>
+                            <div className="col-xs-2 col-sm-2 col-md-2">
+                                <button type='submit' onClick={this.deleteAttendant.bind(this)}>DELETE</button>&nbsp;
+                            </div>
+                        </div>
 
                     </form>
 
