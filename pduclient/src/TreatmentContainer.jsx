@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import AddTreat from './AddTreat';
 import ViewTreat from './ViewTreat';
 
-import './PatientContainer.css';
+
 
 
 
@@ -17,29 +17,20 @@ export default class TreatmentContainer extends Component {
 
 
                 <Router>
-                    <div align="center">
-                        <div className="submenu">
-                            <div className="col">
-                                <h2><Link className="link" to="/treat">View Treatments</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div className="col">
-                                <h2><Link className="link" to="/addTreat">Manage Treatments</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;
 
+                        <div >
 
+                                <h2 className="login"><Link  to="/treat">View Treatments</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <h2  className="login"><Link to="/addTreat">Manage Treatments</Link></h2>
 
-                            <Route exact path="/treat" render={props =>{
-                                return<ViewTreat/>
-                            }}/>
-                            <Route path="/addTreat" render={props =>{
-                                return<AddTreat/>
-                            }}/>
+                                 <Route exact path="/treat" render={props =>{return<ViewTreat/>}}/>
+                                 <Route path="/addTreat" render={props =>{return<AddTreat/>}}/>
                         </div>
 
 
 
 
-                    </div>
+
 
                 </Router>
 

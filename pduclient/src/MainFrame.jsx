@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './PatientContainer.css';
 import PatientContainer from "./PatientContainer";
@@ -36,31 +36,31 @@ export default class mainFrame extends Component {
                 <p className="App-intro"></p>
 
                 <Router>
-                    <div align="center">
-                        <div className="row" style={style}>
+                    <div align="center" className={'menubarmain'}>
 
-                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
-                                <h2 className={'menubar btn-primary btn-block btn-dark'} ><Link to={'/PatientHandling'} className={'link'}>Patients</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'} >
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/ResourceHandling'}>Resources</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/DrugHandling'}>Drugs</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/TreatmentHandling'}>Treatments</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/EmergencyHandling'}>Emergency List</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/Bill'}>Generate Bill</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div className="col-xs-2 col-sm-2 col-md-2" id={'inline'}>
-                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/logout'}>LogOut</Link></h2>
-                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </div>
+
+
+                                <h2 className={'menubar'} ><Link to={'/PatientHandling'}>Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                <h2 className={'menubar'}><Link to={'/ResourceHandling'}>Resources</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                <h2 className={'menubar '}><Link to={'/DrugHandling'}>Drugs</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                <h2 className={'menubar'}><Link to={'/TreatmentHandling'}>Treatments</Link></h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                <h2 className={'menubar'}><Link to={'/EmergencyHandling'}>Emergency List</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                <h2 className={'menubar '}><Link to={'/Bill'}>Generate Bill</Link></h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                <h2 className={'menubar'}><Link to={'/logout'}>LogOut</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
 
                         <Route exact path='/PatientHandling' render={function(props){  return  <PatientContainer/>}}> </Route>
                         <Route exact path='/ResourceHandling' render={function(props){  return <ResourseContainer />}}> </Route>

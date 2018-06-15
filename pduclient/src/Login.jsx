@@ -4,7 +4,7 @@ import  ReactDOM from 'react-dom';
 
 import PropTypes from 'prop-types';
 import axios from 'axios';
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import MainFrame from './MainFrame';
 
@@ -88,7 +88,7 @@ export default class Login extends Component {
 
                 <div className="container">
                     <form onSubmit={this.getUserdata.bind(this)}>
-                        <div className="row" style={style}>
+                                               <div className="row" style={style}>
                             <div className="col-xs-4 col-sm-4 col-md-2 text-center">
                                 <label>Username: </label>
                             </div>
