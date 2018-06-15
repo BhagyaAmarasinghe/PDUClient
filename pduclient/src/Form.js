@@ -60,7 +60,7 @@ addMachine(event){
                  </div>
 
                   <div className="col-xs-2 col-sm-2 col-md-2 text-center ">
-                       <button className="btn btn-primary btn-block btn-dark" type={'submit'}>Login</button>
+                       <button className="btn btn-primary btn-block btn-dark" type={'submit'}>Add</button>
                   </div>
     </div>
             </form>
