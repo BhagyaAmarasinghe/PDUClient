@@ -8,15 +8,10 @@ import ResourseContainer from "./ResourseContainer";
 import DrugContainer from './DrugContainer';
 import TreatmentContainer from "./TreatmentContainer";
 import EmergencyContainer from './EmergencyContainer';
-<<<<<<< HEAD
+
 import BillContainer from "./BillContainer";
-=======
+
 import LogOut from "./LogOut";
->>>>>>> 8034cd0d20331665e25dd47d0d6c564088d94c45
-
-
-
-
 
 export default class mainFrame extends Component {
 
@@ -67,11 +62,11 @@ export default class mainFrame extends Component {
                         <Route exact path='/DrugHandling' render={function(props){  return <DrugContainer />}}> </Route>
                         <Route exact path='/TreatmentHandling' render={function(props){  return <TreatmentContainer />}}> </Route>
                         <Route exact path='/EmergencyHandling' render={function(props){  return <EmergencyContainer />}}> </Route>
-<<<<<<< HEAD
+
                         <Route exact path='/Bill' render={function(props){  return <BillContainer/>}}> </Route>
-=======
+
                         <Route exact path='/logout' render={function(props){  return <LogOut/>}}> </Route>
->>>>>>> 8034cd0d20331665e25dd47d0d6c564088d94c45
+
 
 
                     </div>
