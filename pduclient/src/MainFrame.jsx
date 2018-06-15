@@ -8,6 +8,7 @@ import ResourseContainer from "./ResourseContainer";
 import DrugContainer from './DrugContainer';
 import TreatmentContainer from "./TreatmentContainer";
 import EmergencyContainer from './EmergencyContainer';
+import BillContainer from "./BillContainer";
 
 
 
@@ -49,6 +50,9 @@ export default class mainFrame extends Component {
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/EmergencyHandling'}>Emergency List</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </div>
                             <div className="col-xs-2 col-sm-2 col-md-2">
+                                <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/Bill'}>Generate Bill</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/logout'}>LogOut</Link></h2>
                             </div>
                         </div>
@@ -58,6 +62,7 @@ export default class mainFrame extends Component {
                         <Route exact path='/DrugHandling' render={function(props){  return <DrugContainer />}}> </Route>
                         <Route exact path='/TreatmentHandling' render={function(props){  return <TreatmentContainer />}}> </Route>
                         <Route exact path='/EmergencyHandling' render={function(props){  return <EmergencyContainer />}}> </Route>
+                        <Route exact path='/Bill' render={function(props){  return <BillContainer/>}}> </Route>
 
 
                     </div>
