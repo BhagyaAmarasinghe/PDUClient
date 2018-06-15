@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './PatientContainer.css';
 import PatientContainer from "./PatientContainer";
@@ -35,22 +35,22 @@ export default class mainFrame extends Component {
 
                             <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'} ><Link to={'/PatientHandling'}>Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div><br/>
+                            </div>
                             <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/ResourceHandling'}>Resources</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div><br/>
+                            </div>
                             <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/DrugHandling'}>Drugs</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div><br/>
+                            </div>
                             <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/TreatmentHandling'}>Treatments</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div><br/>
+                            </div>
                             <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/EmergencyHandling'}>Emergency List</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div><br/>
+                            </div>
                             <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'}><Link to={'/logout'}>LogOut</Link></h2>
-                            </div><br/>
+                            </div>
                         </div>
 
                         <Route exact path='/PatientHandling' render={function(props){  return  <PatientContainer/>}}> </Route>
