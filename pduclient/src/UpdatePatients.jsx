@@ -151,7 +151,7 @@ static get propTypes() {
                                 <td><label>Drugs</label></td>
                                 <td><input type={'text'} value={PatientLists.Drugs}id={'Drugs'} ref={'Drugs'} className={'set'}/></td>
                                 <td className={'set'}><input type={'text'} id={'newdrugs'} ref={'newDrugs'}/></td>
-                                <button onClick={function(){  document.getElementById("Drugs").value= document.getElementById("newdrugs").value}} >Add</button>
+                                <button onClick={function(){  document.getElementById("Drugs").value=document.getElementById("Drugs").value+','+ document.getElementById("newdrugs").value}} >Add</button>
                             </tr>
                                 <tr>
                                     <td> <label>Doctor</label></td>
