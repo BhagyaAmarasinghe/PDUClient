@@ -39,6 +39,7 @@ export default class AddPatients extends Component{
             Treatments:this.refs.Treatments.value,
             Tests:this.refs.Tests.value,
             Drugs:this.refs.Drugs.value,
+            Doctor:this.refs.Doctor.value,
             Date:this.state.startDate
             }).then(function (result) {
             if(result.status===200){
@@ -113,6 +114,10 @@ export default class AddPatients extends Component{
                         <tr>
                             <td><label>Drugs: </label></td>
                             <td><input type={'text'} ref={'Drugs'} value={'N/a'}/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Doctor: </label></td>
+                            <td><input type={'text'} ref={'Doctor'} /></td>
                         </tr>
                         <tr>
                             <td><label>Date: </label></td>

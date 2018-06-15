@@ -41,6 +41,7 @@ static get propTypes() {
                Treatments:document.getElementById("Treatments").value,
                Tests:document.getElementById("Test").value,
                Drugs:document.getElementById("Drugs").value,
+               Doctor:document.getElementById("Doctor").value,
                Date:document.getElementById("Date").value}).then(function (result) {
            if(result.status===200){
 
@@ -152,6 +153,10 @@ static get propTypes() {
                                 <td className={'set'}><input type={'text'} id={'newdrugs'} ref={'newDrugs'}/></td>
                                 <button onClick={function(){  document.getElementById("Drugs").value= document.getElementById("newdrugs").value}} >Add</button>
                             </tr>
+                                <tr>
+                                    <td> <label>Doctor</label></td>
+                                    <td>  <input type={'text'} value={PatientLists.Doctor} id={'Doctor'}/></td>
+                                </tr>
                                 <tr>
                                     <td><label>Date</label></td>
                                     <td><input type={'text'} value={PatientLists.Date}id={'Date'} id={'Date'}/></td>
