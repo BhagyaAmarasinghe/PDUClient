@@ -42,7 +42,7 @@ class Attendant extends Component {
         })
     }
 
-    updateNurse(event) {
+    updateAttendant(event) {
         event.preventDefault();
 
         axios.put(Base.API + '/Attendant/' + this.refs.att_id.value, { att_id: this.refs.att_id.value, att_name: this.refs.att_name.value, att_nic: this.refs.att_nic.value, att_age: this.refs.att_age.value, att_address: this.refs.att_address.value, att_ward: this.refs.att_ward.value }).then(function (result) {
@@ -56,7 +56,7 @@ class Attendant extends Component {
         })
     }
 
-    deleteNurse(event) {
+    deleteAttendant(event) {
         event.preventDefault();
         axios.delete(Base.API + '/Attendant/' + this.refs.att_id.value).then(function (result) {
             if (result == 200) {
@@ -66,7 +66,7 @@ class Attendant extends Component {
         })
 
     }
-    getNurse(event) {
+    getAttendant(event) {
 
         event.preventDefault();
 
