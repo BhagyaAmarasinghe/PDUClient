@@ -68,7 +68,7 @@ class CalculateBill extends Component{
         //debugger;
         for (var i = 0; i < splitDrugs.length; i++) {
 
-            axios.get(Base.API + '/Drugs/' + splitDrugs[i]).then(result => {
+            axios.get(Base.API + '/Drugs/' + splitDrugs[i+1]).then(result => {
 
                 if (result.status === 200) {
                     this.setState({
@@ -109,7 +109,7 @@ class CalculateBill extends Component{
 
         for (var i = 0; i < splitTests.length; i++) {
 
-            axios.get(Base.API + '/Tests/' + splitTests[i]).then(result => {
+            axios.get(Base.API + '/Tests/' + splitTests[i+1]).then(result => {
                 //debugger;
                 if (result.status === 200) {
                     this.setState({
@@ -155,7 +155,7 @@ class CalculateBill extends Component{
         //console.log(splitTreats);
         for (var i = 0; i < splitTreats.length; i++) {
 
-            axios.get(Base.API + '/Treatments/' + splitTreats[i]).then(result => {
+            axios.get(Base.API + '/Treatments/' + splitTreats[i+1]).then(result => {
                 //debugger;
                 if (result.status === 200) {
                     //debugger;

@@ -8,7 +8,8 @@ var Base  					= require('./Statics.Common');
 class Material extends Component{
     static get PropTypes(){
             return {
-                mat:PropTypes.array
+                mat:PropTypes.array,
+                getMaterials:PropTypes.func
 
             }
     }
@@ -19,6 +20,8 @@ class Material extends Component{
             mat:[]
 
         };
+
+
     }
 
     addMaterial(event){
@@ -30,7 +33,7 @@ class Material extends Component{
                 alert("successfully added");
 
             }
-
+            this.getMaterials(event);
             /*this.refs.mat_id.value ='';
             this.refs.mat_name.value ='';
             this.refs.mat_quantity.value ='';
@@ -51,6 +54,7 @@ class Material extends Component{
                 console.log('successfully updated');
                 alert("successfully updated");
             }
+
         }).catch(function (reason) {
             alert(reason);
             alert('update failed')
@@ -59,30 +63,46 @@ class Material extends Component{
 
     deleteMaterial(event){
         event.preventDefault();
-        axios.delete(Base.API+'/Materials/'+this.refs.mat_id.value).then(function (result) {
+        var mt_id = prompt('please enter the material ID to be deleted');
+        axios.delete(Base.API+'/Materials/'+mt_id).then(function (result) {
             if(result==200){
                 console.log('successfully removed');
                 alert('successfully removed')
             }
+
         })
 
     }
     getMaterials(event){
+<<<<<<< HEAD
     alert('rr');
         event.preventDefault();
+=======
 
+>>>>>>> 062ce76054ec9d1184cb8ab5e903808d46eb46f7
+
+            event.preventDefault();
 
         axios.get(Base.API +'/Materials').then(result => {
             if(result.status === 200){
+<<<<<<< HEAD
 
+=======
+            debugger
+>>>>>>> 062ce76054ec9d1184cb8ab5e903808d46eb46f7
             this.setState({
 
                 mat:result.data.data
 
             })
             console.log("successful")
+<<<<<<< HEAD
             console.log(this.state.mat)
 
+=======
+
+        debugger
+>>>>>>> 062ce76054ec9d1184cb8ab5e903808d46eb46f7
         }
         }).catch(function (reason) {
             alert('could not get the material list')
@@ -98,6 +118,7 @@ class Material extends Component{
                 <form>
 
 
+<<<<<<< HEAD
     <div align="center">
                     <div className="col-xs-4 col-sm-4 col-md-2 text-center">
                         <label>Material ID: </label>
@@ -149,6 +170,9 @@ class Material extends Component{
                     <button className="btn btn-primary btn-block btn-dark" type={'submit'}  onClick={(event)=>this.getMaterials(event)}>VIEW MATERIALS</button>
                 </div>
     </div><br/>
+=======
+                    <button type='submit' onClick={e=>{this.getMaterials(e)}}>VIEW</button>
+>>>>>>> 062ce76054ec9d1184cb8ab5e903808d46eb46f7
 
                 <div align="center">
                             <table className="Materials">

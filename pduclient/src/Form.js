@@ -30,7 +30,7 @@ addMachine(event){
             <h1 className="Form-title">Add a Machine</h1>
         </header>
         <p className="Form-intro">
-            please enter the details of the app to register a machine
+
         </p>
             <form onSubmit={this.addMachine.bind(this)}>
 
