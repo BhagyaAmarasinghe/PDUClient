@@ -31,7 +31,7 @@ export default class mainFrame extends Component {
 
                 <Router>
                     <div align="center">
-                        <div className="btn-group-vertical" style={style}>
+                        <div className="row" style={style}>
 
                             <div className="col-xs-2 col-sm-2 col-md-2">
                                 <h2 className={'menubar btn-primary btn-block btn-dark'} ><Link to={'/PatientHandling'}>Patients</Link></h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
