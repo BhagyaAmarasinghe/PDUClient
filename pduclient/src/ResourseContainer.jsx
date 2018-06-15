@@ -7,6 +7,7 @@ import Doctor from './Doctor.js';
 import Material from './Material.js';
 import Nurse from './Nurse.js';
 import Attendant from './Attendant.js';
+import Diagnosis from './Diagnosis';
 
 
 
@@ -34,6 +35,9 @@ export default class ResourseContainer extends Component{
 
                         <button> <Link to='/Attendant'>Attendants</Link></button>&nbsp;&nbsp;
                         <Route exact path='/Attendant' render={function(props){  return <Attendant />}}></Route>
+
+                        <button> <Link to='/Diagnosis'>Diagnosis</Link></button>&nbsp;&nbsp;
+                        <Route exact path='/Diagnosis' render={function(props){  return <Diagnosis />}}></Route>
 
 
 
