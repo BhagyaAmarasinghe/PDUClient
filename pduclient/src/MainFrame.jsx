@@ -9,14 +9,11 @@ import DrugContainer from './DrugContainer';
 import TreatmentContainer from "./TreatmentContainer";
 import EmergencyContainer from './EmergencyContainer';
 
+
+
 import BillContainer from "./BillContainer";
 
 import LogOut from "./LogOut";
-
-
-
-
-
 
 export default class mainFrame extends Component {
 

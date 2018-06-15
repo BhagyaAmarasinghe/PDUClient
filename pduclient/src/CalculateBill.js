@@ -1,27 +1,18 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import PropTypes            from 'prop-types';
 
 
 var Base=require('./Statics.Common');
 
 
-var dprice=[];
-
 
 class CalculateBill extends Component{
-   /* static get PropTypes(){
-        return {
-            drugs: PropTypes.array
-
-        }
-    }*/
 
     constructor(props){
         super(props);
         this.state = {
             arr: [],
-            test:[],
+            tests:[],
             drugs:[],
             treat:[],
             testTot:[],
@@ -65,6 +56,12 @@ class CalculateBill extends Component{
     getDrugsTotal(event) {
         event.preventDefault();
         var drugs = this.refs.Drugs.value;
+
+        if(drugs===""){
+            document.getElementById("DrugTot").value=0;
+        }
+
+        else{
         var splitDrugs = drugs.split(',');
         var total=0;
         var x =0;
@@ -88,7 +85,7 @@ class CalculateBill extends Component{
             }).catch(err => {
                 alert(err);
             });
-        }
+        }}
     }
 
     subDrug(total){
@@ -97,21 +94,32 @@ class CalculateBill extends Component{
     getTestsTotal(event) {
         event.preventDefault();
         var tests = this.refs.Tests.value;
+
+        if(tests===""){
+            document.getElementById("TestTot").value=0;
+        }
+
+        else{
         var splitTests = tests.split(',');
         var total=0;
         var x =0;
-        //debugger;
+
+
+
+
         for (var i = 0; i < splitTests.length; i++) {
 
             axios.get(Base.API + '/Tests/' + splitTests[i]).then(result => {
-
+                //debugger;
                 if (result.status === 200) {
                     this.setState({
-                        test:result.data.data
+                        tests:result.data.data
                     });
-                    this.state.test.map(function (test) {
-                        total = total+ parseFloat(test.price)
+                    this.state.tests.map(function (test) {
+                        //console.log(test.t_price);
+                        total = total+ test.t_price;
                     });
+
 
                     x++;
                     if(x===splitTests.length){
@@ -122,7 +130,7 @@ class CalculateBill extends Component{
                 alert(err);
 
             });
-        }
+        }}
     }
 
     subTest(total){
@@ -132,22 +140,31 @@ class CalculateBill extends Component{
     getTreatTotal(event) {
         event.preventDefault();
         var treats = this.refs.Treatments.value;
+
+        if(treats===""){
+            document.getElementById("TreatTot").value=0;
+        }
+
+        else{
+
+
         var splitTreats = treats.split(',');
         var total=0;
         var x =0;
         //debugger;
-        console.log(splitTreats);
+        //console.log(splitTreats);
         for (var i = 0; i < splitTreats.length; i++) {
 
             axios.get(Base.API + '/Treatments/' + splitTreats[i]).then(result => {
-                debugger;
+                //debugger;
                 if (result.status === 200) {
-                    debugger;
+                    //debugger;
                     this.setState({
                         treat:result.data.data
                     });
                     this.state.treat.map(function (treat) {
-                        total = total+ parseFloat(treat.price)
+                        total = total+ parseFloat(treat.price);
+                        console.log(treat.price);
                     });
 
                     x++;
@@ -160,38 +177,59 @@ class CalculateBill extends Component{
 
             });
         }
+        }
     }
 
     subTreat(total){
         document.getElementById("TreatTot").value=total;
     }
 
+    subTotal(event){
+        event.preventDefault();
+        var treatTotal=parseFloat(document.getElementById("TreatTot").value);
+        var drugTotal=parseFloat(document.getElementById("DrugTot").value);
+        var testTotal=parseFloat(document.getElementById("TestTot").value);
+
+        //debugger;
+        var SubTot=treatTotal+drugTotal+testTotal;
+        console.log(SubTot);
+        document.getElementById("SubTotal").value=SubTot;
+    }
+
+
+
+
     render(){
         return <div className="page">
             <form >
                 <br/><br/><br/>
                 <label>ID</label>&nbsp;
-                <input type="text" ref='id'/><br/><br/>
+                <input type="text" ref='id'/>&nbsp; <button type="submit" className="button" onClick={this.autoFill.bind(this)}>AutoFill</button><br/><br/>
                 <label>Name</label>&nbsp;
                 <input type="text" ref='Pname'/><br/><br/>
                 <label>Registered Date</label>&nbsp;
                 <input type="text" ref='Date'/><br/><br/>
                 <label>Drugs</label>&nbsp;
                 <input type="text" ref='Drugs'/>&nbsp;
+                <button type="submit" className="button" onClick={this.getDrugsTotal.bind(this)}>Drugs Total</button>&nbsp;
                 <input type="text" id="DrugTot" /><br/><br/>
                 <label>Tests</label>&nbsp;
                 <input type="text" ref='Tests'/>&nbsp;
+                <button type="submit" className="button" onClick={this.getTestsTotal.bind(this)}>Tests Total</button>&nbsp;
                 <input type="text" id="TestTot" /><br/><br/>
                 <label>Treatments</label>&nbsp;
                 <input type="text" ref='Treatments'/>&nbsp;
+                <button type="submit" className="button" onClick={this.getTreatTotal.bind(this)}>Treatments Total</button>&nbsp;
                 <input type="text" id="TreatTot" /><br/><br/>
+                <br/><br/><br/>
+                <button type="submit" className="button" onClick={this.subTotal.bind(this)}>Calculate Total</button>
+                <br/><br/><br/>
+                <label>Sub Total: </label>&nbsp;
+                <input type="text" id="SubTotal" /><br/><br/>
                 <br/><br/><br/>
 
 
-                <button type="submit" className="button" onClick={this.autoFill.bind(this)}>AutoFill</button>
-                <button type="submit" className="button" onClick={this.getDrugsTotal.bind(this)}>Drugs Total</button>
-                <button type="submit" className="button" onClick={this.getTestsTotal.bind(this)}>Tests Total</button>
-                <button type="submit" className="button" onClick={this.getTreatTotal.bind(this)}>Treatments Total</button>
+
 
             </form>
 
