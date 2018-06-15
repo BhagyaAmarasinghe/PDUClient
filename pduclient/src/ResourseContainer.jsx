@@ -25,9 +25,6 @@ export default class ResourseContainer extends Component{
                                 <Link to='/addMachine'>Add Machine</Link>&nbsp;&nbsp;
                             </div>
                             <div>
-                                <Link to='/assignDoctor'>Assign Doctor</Link>&nbsp;&nbsp;
-                            </div>
-                            <div>
                                 <Link to='/Materials'>Materials</Link>&nbsp;&nbsp;
                             </div>
                             <div>
@@ -44,7 +41,6 @@ export default class ResourseContainer extends Component{
 
 
                         <Route exact path='/addMachine' render={function(props){  return <Form />}}></Route>
-                        <Route exact path='/assignDoctor' render={function(props){  return <Doctor />}}></Route>
                         <Route exact path='/Materials' render={function(props){  return <Material />}}></Route>
                         <Route exact path='/Nurse' render={function(props){  return <Nurse />}}></Route>
                         <Route exact path='/Attendant' render={function(props){  return <Attendant />}}></Route>
