@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './PatientContainer.css';
 import PatientContainer from "./PatientContainer";

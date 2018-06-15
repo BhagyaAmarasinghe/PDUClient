@@ -25,7 +25,7 @@
 h2.login{
   display: inline-block;
 }
-.set{
+.set,.divDoc{
   display: inline-block;
 }
 @keyframes App-logo-spin {
